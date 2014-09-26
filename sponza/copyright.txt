@@ -1,3 +1,8 @@
+September, 2014 Robert Hildebrandt converted the model from Morgan McGuire's
+OBJ to blender to be able to export to ogre
+Removing duplicate meshes and preparing textures for PBR.
+
+
 July 14, 2011 Morgan McGuire modified the model from Crytek's OBJ
 export to correct some small errors.  He computed bump maps from the
 normal maps using <a
