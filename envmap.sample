@@ -1,4 +1,0 @@
-void main()
-{
-  loadEnvMap("test-sky-box");
-}

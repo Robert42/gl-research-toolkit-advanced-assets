@@ -1,6 +1,0 @@
-void main()
-{
-  loadEnvMap("backgrounds/skybox/starfield-001");
-
-  enableDebugCameraController();
-}
