@@ -1,0 +1,89 @@
+#include "uuids.as"
+
+
+void registerMaterials(ResourceIndex@ index)
+{
+  TexturedMaterialOpaque dummyMaterial;
+  
+  index.registerMaterial(uuid: uuids::sponza::materials::details,
+                         material: dummyMaterial);
+  
+  index.registerMaterial(uuid: uuids::sponza::materials::bricks,
+                         material: dummyMaterial);
+  
+  index.registerMaterial(uuid: uuids::sponza::materials::column_a,
+                         material: dummyMaterial);
+  
+  index.registerMaterial(uuid: uuids::sponza::materials::column_b,
+                         material: dummyMaterial);
+  
+  index.registerMaterial(uuid: uuids::sponza::materials::column_c,
+                         material: dummyMaterial);
+  
+  index.registerMaterial(uuid: uuids::sponza::materials::ceiling,
+                         material: dummyMaterial);
+  
+  index.registerMaterial(uuid: uuids::sponza::materials::arch,
+                         material: dummyMaterial);
+  
+  index.registerMaterial(uuid: uuids::sponza::materials::roof,
+                         material: dummyMaterial);
+  
+  index.registerMaterial(uuid: uuids::sponza::materials::floor,
+                         material: dummyMaterial);
+}
+
+void registerScene(ResourceIndex@ index)
+{
+  SceneGraphImportSettings importSettings;
+  
+  importSettings.materialUuids['details'] = uuids::sponza::materials::details;
+  importSettings.materialUuids['bricks'] = uuids::sponza::materials::bricks;
+  importSettings.materialUuids['column_a'] = uuids::sponza::materials::column_a;
+  importSettings.materialUuids['column_b'] = uuids::sponza::materials::column_b;
+  importSettings.materialUuids['column_c'] = uuids::sponza::materials::column_c;
+  importSettings.materialUuids['ceiling'] = uuids::sponza::materials::ceiling;
+  importSettings.materialUuids['arch'] = uuids::sponza::materials::arch;
+  importSettings.materialUuids['roof'] = uuids::sponza::materials::roof;
+  importSettings.materialUuids['floor'] = uuids::sponza::materials::floor;
+  /* template
+  importSettings.materialUuids[''] = uuids::sponza::materials::XYZ;
+  */
+    
+  importSettings.cameraUuids['EyeHeight'] = uuids::sponza::cameras::eyeHeight;
+  importSettings.lightUuids['Sun'] = uuids::sponza::lights::sunLight;
+  
+  index.convertSceneGraph(sceneGraphFile: "sponza-building.scene-graph",
+                          sourceFile: "sponza.blend",
+                          groupToImport: "sponza-building",
+                          settings: importSettings);
+  index.convertSceneGraph(sceneGraphFile: "sponza-scenery.scene-graph",
+                          sourceFile: "sponza.blend",
+                          groupToImport: "scenery",
+                          settings: importSettings);
+  
+  index.registerSceneLayerFile(uuid: uuids::sponza::sceneLayers::sponza_building,
+                               file: "sponza-building.scene-layer");
+  index.registerSceneLayerFile(uuid: uuids::sponza::sceneLayers::sponza_scenery,
+                               file: "sponza-scenery.scene-layer");
+  
+  index.registerSceneFile(uuid: uuids::sponza::scenes::sponza_full,
+                          file: "sponza-full.scene");
+}
+
+void registerLights(ResourceIndex@ index)
+{
+  SphereAreaLightSource sphereAreaLight;
+  sphereAreaLight.radius = 100.0;
+  sphereAreaLight.luminous_power *= 1000;
+  
+  index.registerLightSource(uuid: uuids::sponza::lights::sunLight,
+                            light: sphereAreaLight);
+}
+
+void main(ResourceIndex@ index)
+{
+  registerMaterials(index);
+  registerScene(index);
+  registerLights(index);
+}
