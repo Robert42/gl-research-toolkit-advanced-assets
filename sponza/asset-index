@@ -31,6 +31,54 @@ void registerMaterials(ResourceIndex@ index)
   
   index.registerMaterial(uuid: uuids::sponza::materials::floor,
                          material: dummyMaterial);
+  
+  index.registerMaterial(uuid: uuids::sponza::materials::flagpole,
+                         material: dummyMaterial);
+  
+  index.registerMaterial(uuid: uuids::sponza::materials::vase_hanging,
+                         material: dummyMaterial);
+  
+  index.registerMaterial(uuid: uuids::sponza::materials::chain,
+                         material: dummyMaterial);
+  
+  index.registerMaterial(uuid: uuids::sponza::materials::vase,
+                         material: dummyMaterial);
+  
+  index.registerMaterial(uuid: uuids::sponza::materials::vase_round,
+                         material: dummyMaterial);
+  
+  index.registerMaterial(uuid: uuids::sponza::materials::vase_foliage,
+                         material: dummyMaterial);
+  
+  index.registerMaterial(uuid: uuids::sponza::materials::fabric_a,
+                         material: dummyMaterial);
+  
+  index.registerMaterial(uuid: uuids::sponza::materials::fabric_b,
+                         material: dummyMaterial);
+  
+  index.registerMaterial(uuid: uuids::sponza::materials::fabric_c,
+                         material: dummyMaterial);
+  
+  index.registerMaterial(uuid: uuids::sponza::materials::fabric_d,
+                         material: dummyMaterial);
+  
+  index.registerMaterial(uuid: uuids::sponza::materials::fabric_e,
+                         material: dummyMaterial);
+  
+  index.registerMaterial(uuid: uuids::sponza::materials::fabric_f,
+                         material: dummyMaterial);
+  
+  index.registerMaterial(uuid: uuids::sponza::materials::fabric_g,
+                         material: dummyMaterial);
+  
+  index.registerMaterial(uuid: uuids::sponza::materials::leaf,
+                         material: dummyMaterial);
+  
+  index.registerMaterial(uuid: uuids::sponza::materials::lion_shield,
+                         material: dummyMaterial);
+  
+  index.registerMaterial(uuid: uuids::sponza::materials::lion,
+                         material: dummyMaterial);
 }
 
 void registerScene(ResourceIndex@ index)
@@ -46,26 +94,63 @@ void registerScene(ResourceIndex@ index)
   importSettings.materialUuids['arch'] = uuids::sponza::materials::arch;
   importSettings.materialUuids['roof'] = uuids::sponza::materials::roof;
   importSettings.materialUuids['floor'] = uuids::sponza::materials::floor;
-  /* template
-  importSettings.materialUuids[''] = uuids::sponza::materials::XYZ;
-  */
+  importSettings.materialUuids['flagpole'] = uuids::sponza::materials::flagpole;
+  importSettings.materialUuids['vase_hanging'] = uuids::sponza::materials::vase_hanging;
+  importSettings.materialUuids['chain'] = uuids::sponza::materials::chain;
+  importSettings.materialUuids['vase'] = uuids::sponza::materials::vase;
+  importSettings.materialUuids['vase_round'] = uuids::sponza::materials::vase_round;
+  importSettings.materialUuids['vase_foliage'] = uuids::sponza::materials::vase_foliage;
+  importSettings.materialUuids['fabric_a'] = uuids::sponza::materials::fabric_a;
+  importSettings.materialUuids['fabric_b'] = uuids::sponza::materials::fabric_b;
+  importSettings.materialUuids['fabric_c'] = uuids::sponza::materials::fabric_c;
+  importSettings.materialUuids['fabric_d'] = uuids::sponza::materials::fabric_d;
+  importSettings.materialUuids['fabric_e'] = uuids::sponza::materials::fabric_e;
+  importSettings.materialUuids['fabric_f'] = uuids::sponza::materials::fabric_f;
+  importSettings.materialUuids['fabric_g'] = uuids::sponza::materials::fabric_g;
+  importSettings.materialUuids['leaf'] = uuids::sponza::materials::leaf;
+  importSettings.materialUuids['lion_shield'] = uuids::sponza::materials::lion_shield;
+  importSettings.materialUuids['lion'] = uuids::sponza::materials::lion;
     
   importSettings.cameraUuids['EyeHeight'] = uuids::sponza::cameras::eyeHeight;
   importSettings.lightUuids['Sun'] = uuids::sponza::lights::sunLight;
   
-  index.convertSceneGraph(sceneGraphFile: "sponza-building.scene-graph",
-                          sourceFile: "sponza.blend",
-                          groupToImport: "sponza-building",
-                          settings: importSettings);
   index.convertSceneGraph(sceneGraphFile: "sponza-scenery.scene-graph",
                           sourceFile: "sponza.blend",
                           groupToImport: "scenery",
                           settings: importSettings);
-  
-  index.registerSceneLayerFile(uuid: uuids::sponza::sceneLayers::sponza_building,
-                               file: "sponza-building.scene-layer");
+  index.convertSceneGraph(sceneGraphFile: "sponza-building.scene-graph",
+                          sourceFile: "sponza.blend",
+                          groupToImport: "sponza-building",
+                          settings: importSettings);
+  index.convertSceneGraph(sceneGraphFile: "sponza-decoration.scene-graph",
+                          sourceFile: "sponza.blend",
+                          groupToImport: "sponza-decoraton",
+                          settings: importSettings);
+  index.convertSceneGraph(sceneGraphFile: "sponza-fabrics.scene-graph",
+                          sourceFile: "sponza.blend",
+                          groupToImport: "sponza-fabrics",
+                          settings: importSettings);
+  index.convertSceneGraph(sceneGraphFile: "sponza-foliage.scene-graph",
+                          sourceFile: "sponza.blend",
+                          groupToImport: "sponza-foliage",
+                          settings: importSettings);
+  index.convertSceneGraph(sceneGraphFile: "sponza-unmovable-decoration.scene-graph",
+                          sourceFile: "sponza.blend",
+                          groupToImport: "sponza-unmovable-decoraton",
+                          settings: importSettings);
+                          
   index.registerSceneLayerFile(uuid: uuids::sponza::sceneLayers::sponza_scenery,
                                file: "sponza-scenery.scene-layer");
+  index.registerSceneLayerFile(uuid: uuids::sponza::sceneLayers::sponza_building,
+                               file: "sponza-building.scene-layer");
+  index.registerSceneLayerFile(uuid: uuids::sponza::sceneLayers::sponza_decoration,
+                               file: "sponza-decoration.scene-layer");
+  index.registerSceneLayerFile(uuid: uuids::sponza::sceneLayers::sponza_fabrics,
+                               file: "sponza-fabrics.scene-layer");
+  index.registerSceneLayerFile(uuid: uuids::sponza::sceneLayers::sponza_foliage,
+                               file: "sponza-foliage.scene-layer");
+  index.registerSceneLayerFile(uuid: uuids::sponza::sceneLayers::sponza_unmovable_decoration,
+                               file: "sponza-unmovable-decoration.scene-layer");
   
   index.registerSceneFile(uuid: uuids::sponza::scenes::sponza_full,
                           file: "sponza-full.scene");

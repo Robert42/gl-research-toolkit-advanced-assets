@@ -1,0 +1,4 @@
+void main(SceneLayer@ sceneLayer)
+{
+  sceneLayer.loadSceneGraph("sponza-fabrics.scene-graph");
+}
