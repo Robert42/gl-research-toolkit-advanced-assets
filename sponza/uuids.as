@@ -27,6 +27,7 @@ Uuid<Material> fabric_g = Uuid<Material>("{91aef746-1a99-4840-b09a-ead4c16623f2}
 Uuid<Material> leaf = Uuid<Material>("{a367f8b7-872d-41dd-ae9f-978ac55c2f40}");
 Uuid<Material> lion_shield = Uuid<Material>("{1ced3017-0a0c-4f99-a3dc-12a7052304e0}");
 Uuid<Material> lion = Uuid<Material>("{7e332531-0611-40d3-a860-8bdad0f515a2}");
+Uuid<Material> strange_plate = Uuid<Material>("{6c33a23a-0fbd-4f43-85a5-a98869b5489b}");
 } // namespace materials
 
 namespace sceneLayers {

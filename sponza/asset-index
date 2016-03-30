@@ -79,6 +79,9 @@ void registerMaterials(ResourceIndex@ index)
   
   index.registerMaterial(uuid: uuids::sponza::materials::lion,
                          material: dummyMaterial);
+  
+  index.registerMaterial(uuid: uuids::sponza::materials::strange_plate,
+                         material: dummyMaterial);
 }
 
 void registerScene(ResourceIndex@ index)
@@ -110,6 +113,7 @@ void registerScene(ResourceIndex@ index)
   importSettings.materialUuids['leaf'] = uuids::sponza::materials::leaf;
   importSettings.materialUuids['lion_shield'] = uuids::sponza::materials::lion_shield;
   importSettings.materialUuids['lion'] = uuids::sponza::materials::lion;
+  importSettings.materialUuids['strange-plate'] = uuids::sponza::materials::strange_plate;
     
   importSettings.cameraUuids['EyeHeight'] = uuids::sponza::cameras::eyeHeight;
   importSettings.lightUuids['Sun'] = uuids::sponza::lights::sunLight;
