@@ -9,6 +9,10 @@ void registerMaterials(ResourceIndex@ index)
   dummyMaskedTwoSidedMaterial.masked = true;
   dummyMaskedTwoSidedMaterial.two_sided = true;
   
+  PlainColorMaterial debuggingText;
+  debuggingText.base_color = vec3(0);
+  debuggingText.emission = vec3(1);
+  
   index.registerMaterial(uuid: uuids::sponza::materials::details,
                          material: dummyMaterial);
   
@@ -86,6 +90,12 @@ void registerMaterials(ResourceIndex@ index)
   
   index.registerMaterial(uuid: uuids::sponza::materials::strange_plate,
                          material: dummyMaterial);
+  
+  index.registerMaterial(uuid: uuids::sponza::materials::material_test,
+                         material: dummyMaskedTwoSidedMaterial);
+  
+  index.registerMaterial(uuid: uuids::sponza::materials::texture_frame_test,
+                         material: debuggingText);
 }
 
 void registerScene(ResourceIndex@ index)
@@ -118,6 +128,8 @@ void registerScene(ResourceIndex@ index)
   importSettings.materialUuids['lion_shield'] = uuids::sponza::materials::lion_shield;
   importSettings.materialUuids['lion'] = uuids::sponza::materials::lion;
   importSettings.materialUuids['strange-plate'] = uuids::sponza::materials::strange_plate;
+  importSettings.materialUuids['material-test'] = uuids::sponza::materials::material_test;
+  importSettings.materialUuids['texture-frame-text'] = uuids::sponza::materials::texture_frame_test;
   
   index.label[uuids::sponza::materials::details] = 'details';
   index.label[uuids::sponza::materials::bricks] = 'bricks';
@@ -145,6 +157,8 @@ void registerScene(ResourceIndex@ index)
   index.label[uuids::sponza::materials::lion_shield] = 'lion_shield';
   index.label[uuids::sponza::materials::lion] = 'lion';
   index.label[uuids::sponza::materials::strange_plate] = 'strange-plate';
+  index.label[uuids::sponza::materials::material_test] = 'material-test';
+  index.label[uuids::sponza::materials::texture_frame_test] = 'texture-frame-text';
     
   importSettings.cameraUuids['EyeHeight'] = uuids::sponza::cameras::eyeHeight;
   importSettings.lightUuids['Sun'] = uuids::sponza::lights::sunLight;
@@ -173,6 +187,10 @@ void registerScene(ResourceIndex@ index)
                           sourceFile: "sponza.blend",
                           groupToImport: "sponza-unmovable-decoraton",
                           settings: importSettings);
+  index.convertSceneGraph(sceneGraphFile: "texture-frame.scene-graph",
+                          sourceFile: "sponza-debugging-helpers.blend",
+                          groupToImport: "texture-frame",
+                          settings: importSettings);
                           
   index.registerSceneLayerFile(uuid: uuids::sponza::sceneLayers::sponza_scenery,
                                file: "sponza-scenery.scene-layer");
@@ -186,6 +204,8 @@ void registerScene(ResourceIndex@ index)
                                file: "sponza-foliage.scene-layer");
   index.registerSceneLayerFile(uuid: uuids::sponza::sceneLayers::sponza_unmovable_decoration,
                                file: "sponza-unmovable-decoration.scene-layer");
+  index.registerSceneLayerFile(uuid: uuids::sponza::sceneLayers::sponza_material_debugging,
+                               file: "sponza-material-debugging.scene-layer");
   
   index.registerSceneFile(uuid: uuids::sponza::scenes::sponza_full,
                           file: "sponza-full.scene");

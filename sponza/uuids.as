@@ -28,6 +28,8 @@ Uuid<Material> leaf = Uuid<Material>("{a367f8b7-872d-41dd-ae9f-978ac55c2f40}");
 Uuid<Material> lion_shield = Uuid<Material>("{1ced3017-0a0c-4f99-a3dc-12a7052304e0}");
 Uuid<Material> lion = Uuid<Material>("{7e332531-0611-40d3-a860-8bdad0f515a2}");
 Uuid<Material> strange_plate = Uuid<Material>("{6c33a23a-0fbd-4f43-85a5-a98869b5489b}");
+Uuid<Material> material_test = Uuid<Material>("{6318ab59-3681-41f4-abe0-1c784408b4db}");
+Uuid<Material> texture_frame_test = Uuid<Material>("{df23cee0-e2c9-44b4-a631-54acbf6ca169}");
 } // namespace materials
 
 namespace sceneLayers {
@@ -37,6 +39,7 @@ Uuid<SceneLayer> sponza_decoration = Uuid<SceneLayer>("{bef686b8-9f2d-4452-9951-
 Uuid<SceneLayer> sponza_fabrics = Uuid<SceneLayer>("{b43cbc26-9df0-4571-8f56-f648a000d245}");
 Uuid<SceneLayer> sponza_foliage = Uuid<SceneLayer>("{f6320547-88a7-4483-bb66-1fb6ec0bf0c1}");
 Uuid<SceneLayer> sponza_unmovable_decoration = Uuid<SceneLayer>("{77580373-7af8-4103-a587-f6f68a8f0f56}");
+Uuid<SceneLayer> sponza_material_debugging = Uuid<SceneLayer>("{9fd6782c-f6af-4238-a245-64b9d477f96d}");
 } // namespace sceneLayers
 
 namespace scenes {
