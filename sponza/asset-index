@@ -1,5 +1,5 @@
 #include "uuids.as"
-
+#include "common/textures/uuids.as"
 
 void registerMaterials(ResourceIndex@ index)
 {
@@ -128,7 +128,7 @@ void registerScene(ResourceIndex@ index)
   importSettings.materialUuids['lion_shield'] = uuids::sponza::materials::lion_shield;
   importSettings.materialUuids['lion'] = uuids::sponza::materials::lion;
   importSettings.materialUuids['strange-plate'] = uuids::sponza::materials::strange_plate;
-  importSettings.materialUuids['material-test'] = uuids::sponza::materials::material_test;
+  importSettings.materialUuids['material-test'] = uuids::materials::transparency_test; //uuids::sponza::materials::material_test;
   importSettings.materialUuids['texture-frame-text'] = uuids::sponza::materials::texture_frame_test;
   
   index.label[uuids::sponza::materials::details] = 'details';
