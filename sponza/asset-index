@@ -3,7 +3,10 @@
 
 void registerMaterials(ResourceIndex@ index)
 {
-  TexturedMaterialOpaque dummyMaterial;
+  TexturedMaterial dummyMaterial;
+  TexturedMaterial dummyTwoSidedMaterial;
+  
+  dummyTwoSidedMaterial.two_sided = true;
   
   index.registerMaterial(uuid: uuids::sponza::materials::details,
                          material: dummyMaterial);
@@ -114,6 +117,33 @@ void registerScene(ResourceIndex@ index)
   importSettings.materialUuids['lion_shield'] = uuids::sponza::materials::lion_shield;
   importSettings.materialUuids['lion'] = uuids::sponza::materials::lion;
   importSettings.materialUuids['strange-plate'] = uuids::sponza::materials::strange_plate;
+  
+  index.label[uuids::sponza::materials::details] = 'details';
+  index.label[uuids::sponza::materials::bricks] = 'bricks';
+  index.label[uuids::sponza::materials::column_a] = 'column_a';
+  index.label[uuids::sponza::materials::column_b] = 'column_b';
+  index.label[uuids::sponza::materials::column_c] = 'column_c';
+  index.label[uuids::sponza::materials::ceiling] = 'ceiling';
+  index.label[uuids::sponza::materials::arch] = 'arch';
+  index.label[uuids::sponza::materials::roof] = 'roof';
+  index.label[uuids::sponza::materials::floor] = 'floor';
+  index.label[uuids::sponza::materials::flagpole] = 'flagpole';
+  index.label[uuids::sponza::materials::vase_hanging] = 'vase_hanging';
+  index.label[uuids::sponza::materials::chain] = 'chain';
+  index.label[uuids::sponza::materials::vase] = 'vase';
+  index.label[uuids::sponza::materials::vase_round] = 'vase_round';
+  index.label[uuids::sponza::materials::vase_foliage] = 'vase_foliage';
+  index.label[uuids::sponza::materials::fabric_a] = 'fabric_a';
+  index.label[uuids::sponza::materials::fabric_b] = 'fabric_b';
+  index.label[uuids::sponza::materials::fabric_c] = 'fabric_c';
+  index.label[uuids::sponza::materials::fabric_d] = 'fabric_d';
+  index.label[uuids::sponza::materials::fabric_e] = 'fabric_e';
+  index.label[uuids::sponza::materials::fabric_f] = 'fabric_f';
+  index.label[uuids::sponza::materials::fabric_g] = 'fabric_g';
+  index.label[uuids::sponza::materials::leaf] = 'leaf';
+  index.label[uuids::sponza::materials::lion_shield] = 'lion_shield';
+  index.label[uuids::sponza::materials::lion] = 'lion';
+  index.label[uuids::sponza::materials::strange_plate] = 'strange-plate';
     
   importSettings.cameraUuids['EyeHeight'] = uuids::sponza::cameras::eyeHeight;
   importSettings.lightUuids['Sun'] = uuids::sponza::lights::sunLight;
