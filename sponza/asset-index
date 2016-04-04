@@ -194,8 +194,8 @@ void registerScene(ResourceIndex@ index)
 void registerLights(ResourceIndex@ index)
 {
   SphereAreaLightSource sphereAreaLight;
-  sphereAreaLight.radius = 100.0;
-  sphereAreaLight.luminous_power *= 1000;
+  sphereAreaLight.radius = 1.0;
+  sphereAreaLight.luminous_power *= 50000000;
   
   index.registerLightSource(uuid: uuids::sponza::lights::sunLight,
                             light: sphereAreaLight);
