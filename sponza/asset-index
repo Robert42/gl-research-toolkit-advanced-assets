@@ -4,9 +4,10 @@
 void registerMaterials(ResourceIndex@ index)
 {
   TexturedMaterial dummyMaterial;
-  TexturedMaterial dummyTwoSidedMaterial;
   
-  dummyTwoSidedMaterial.two_sided = true;
+  TexturedMaterial dummyMaskedTwoSidedMaterial;
+  dummyMaskedTwoSidedMaterial.masked = true;
+  dummyMaskedTwoSidedMaterial.two_sided = true;
   
   index.registerMaterial(uuid: uuids::sponza::materials::details,
                          material: dummyMaterial);
@@ -42,7 +43,7 @@ void registerMaterials(ResourceIndex@ index)
                          material: dummyMaterial);
   
   index.registerMaterial(uuid: uuids::sponza::materials::chain,
-                         material: dummyMaterial);
+                         material: dummyMaskedTwoSidedMaterial);
   
   index.registerMaterial(uuid: uuids::sponza::materials::vase,
                          material: dummyMaterial);
@@ -51,7 +52,7 @@ void registerMaterials(ResourceIndex@ index)
                          material: dummyMaterial);
   
   index.registerMaterial(uuid: uuids::sponza::materials::vase_foliage,
-                         material: dummyMaterial);
+                         material: dummyMaskedTwoSidedMaterial);
   
   index.registerMaterial(uuid: uuids::sponza::materials::fabric_a,
                          material: dummyMaterial);
@@ -75,7 +76,7 @@ void registerMaterials(ResourceIndex@ index)
                          material: dummyMaterial);
   
   index.registerMaterial(uuid: uuids::sponza::materials::leaf,
-                         material: dummyMaterial);
+                         material: dummyMaskedTwoSidedMaterial);
   
   index.registerMaterial(uuid: uuids::sponza::materials::lion_shield,
                          material: dummyMaterial);
