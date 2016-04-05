@@ -13,6 +13,13 @@ void registerMaterials(ResourceIndex@ index)
   debuggingText.base_color = vec3(0);
   debuggingText.emission = vec3(1);
   
+  TextureSampler samplerNearest;
+  samplerNearest.magFilter = TextureFilter::NEAREST;
+  samplerNearest.minFilter = TextureFilter::NEAREST;
+  samplerNearest.mipFilter = TextureFilter::NEAREST;
+  samplerNearest.minLod = 6;
+  samplerNearest.maxLod = 6;
+  
   index.registerMaterial(uuid: uuids::sponza::materials::details,
                          material: dummyMaterial);
   
@@ -93,7 +100,7 @@ void registerMaterials(ResourceIndex@ index)
   
   
   TexturedMaterial material_test;
-  material_test.basecolor_map = TextureHandle(uuids::textures::fruit_plate_4x4);
+  material_test.basecolor_map = TextureHandle(uuids::textures::fruit_plate_256x256, samplerNearest);
   index.registerMaterial(uuid: uuids::sponza::materials::material_test,
                          material: material_test);
   
