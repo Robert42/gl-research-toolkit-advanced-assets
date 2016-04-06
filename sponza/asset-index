@@ -3,6 +3,17 @@
 
 void registerTextures(ResourceIndex@ index)
 {
+  TextureSampler samplerInterpolated;
+  
+  TextureImportSettings importNormalMap;
+  importNormalMap.format = TextureFormat::RGB;
+  importNormalMap.type = TextureType::INT8;
+  importNormalMap.sourceIsNormalMap = true;
+  
+  index.convertTexture(textureFile: "sponza_floor_a_n.texture", sourceFile: "textures/sponza_floor_a_n.png", settings: importNormalMap);
+  index.registerTextureFile(uuid: uuids::sponza::textures::sponza_floor_a_basic_color,
+                            file: "sponza_floor_a_n.texture",
+                            defaultSampler: samplerInterpolated);
 }
 
 void registerMaterials(ResourceIndex@ index)
@@ -17,12 +28,6 @@ void registerMaterials(ResourceIndex@ index)
   debuggingText.base_color = vec3(0);
   debuggingText.emission = vec3(1);
   
-  TextureSampler samplerNearest;
-  samplerNearest.magFilter = TextureFilter::NEAREST;
-  samplerNearest.minFilter = TextureFilter::NEAREST;
-  samplerNearest.mipFilter = TextureFilter::NEAREST;
-  samplerNearest.minLod = 6;
-  samplerNearest.maxLod = 6;
   
   index.registerMaterial(uuid: uuids::sponza::materials::details,
                          material: dummyMaterial);
@@ -47,9 +52,15 @@ void registerMaterials(ResourceIndex@ index)
   
   index.registerMaterial(uuid: uuids::sponza::materials::roof,
                          material: dummyMaterial);
-  
+                         
+  TexturedMaterial floor_material;
+  //floor_material.basecolor_map = TextureHandle(uuids::sponza::textures::sponza_floor_a_basic_color);
+  floor_material.normal_map = TextureHandle(uuids::sponza::textures::sponza_floor_a_n);
+  //floor_material.height_map = TextureHandle(uuids::sponza::textures::sponza_floor_a_bump);
+  //floor_material.srmo_map = TextureHandle(uuids::sponza::textures::sponza_floor_a_srmo);
+                           
   index.registerMaterial(uuid: uuids::sponza::materials::floor,
-                         material: dummyMaterial);
+                         material: floor_material);
   
   index.registerMaterial(uuid: uuids::sponza::materials::flagpole,
                          material: dummyMaterial);
@@ -104,7 +115,7 @@ void registerMaterials(ResourceIndex@ index)
   
   
   TexturedMaterial material_test;
-  material_test.basecolor_map = TextureHandle(uuids::textures::fruit_plate_256x256, samplerNearest);
+  material_test.basecolor_map = TextureHandle(uuids::textures::fruit_plate_256x256);
   index.registerMaterial(uuid: uuids::sponza::materials::material_test,
                          material: material_test);
   
