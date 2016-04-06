@@ -1,6 +1,8 @@
 April, 2016 Robert Hildebrandt replaced the textures with the textures avialable
 on the crytec [download site](http://www.crytek.com/cryengine/cryengine3/downloads)
 to be able to access the original normal maps.
+He also used the software [Awesome Bump](http://awesomebump.besaba.com/)
+to generate Occlusion maps out of the nump and normal maps
 
 
 September, 2014 Robert Hildebrandt converted the model from Morgan McGuire's
