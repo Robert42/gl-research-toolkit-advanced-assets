@@ -54,5 +54,12 @@ namespace lights {
 Uuid<LightSource> sunLight = Uuid<LightSource>("{3048203a-6c67-41fd-a3b1-c0a300d55d1e}");
 } // namespace lights
 
+namespace textures {
+Uuid<Texture> sponza_floor_a_basic_color = Uuid<Texture>("{84f57d4d-7bfe-43ce-8bd3-8053d4cf0410}");
+Uuid<Texture> sponza_floor_a_n = Uuid<Texture>("{de663aee-30e8-4755-a6ab-4f14a1245922}");
+Uuid<Texture> sponza_floor_a_bump = Uuid<Texture>("{88a57e1c-53b2-4f7e-8f37-e69a9814da8a}");
+Uuid<Texture> sponza_floor_a_srmo = Uuid<Texture>("{3ce94f63-9705-48be-9399-1e5b52fc08de}");
+} // namespace textures
+
 } // namespace sponza
 } // namespace uuids
