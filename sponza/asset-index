@@ -1,6 +1,10 @@
 #include "uuids.as"
 #include "common/textures/uuids.as"
 
+void registerTextures(ResourceIndex@ index)
+{
+}
+
 void registerMaterials(ResourceIndex@ index)
 {
   TexturedMaterial dummyMaterial;
@@ -233,6 +237,7 @@ void registerLights(ResourceIndex@ index)
 
 void main(ResourceIndex@ index)
 {
+  registerTextures(index);
   registerMaterials(index);
   registerScene(index);
   registerLights(index);
