@@ -5,12 +5,22 @@ void registerTextures(ResourceIndex@ index)
 {
   TextureSampler samplerInterpolated;
   
-  TextureImportSettings importNormalMap;
-  importNormalMap.format = TextureFormat::RGB;
-  importNormalMap.type = TextureType::INT8;
-  importNormalMap.sourceIsNormalMap = true;
+  TextureImportSettings import_n;
+  import_n.format = TextureFormat::RGB;
+  import_n.type = TextureType::INT8;
+  import_n.sourceIsNormalMap = true;
   
-  index.convertTexture(textureFile: "sponza_floor_a_n.texture", sourceFile: "textures/sponza_floor_a_n.png", settings: importNormalMap);
+  TextureImportSettings import_n_inverted;
+  import_n_inverted = import_n;
+                            
+  // spnza_bricks                          
+  index.convertTexture(textureFile: "spnza_bricks_a_n.texture", sourceFile: "textures/spnza_bricks_a_ddn.tga", settings: import_n_inverted);
+  index.registerTextureFile(uuid: uuids::sponza::textures::spnza_bricks_a_n,
+                            file: "spnza_bricks_a_n.texture",
+                            defaultSampler: samplerInterpolated);
+  
+  // sponza_floor_a     
+  index.convertTexture(textureFile: "sponza_floor_a_n.texture", sourceFile: "textures/sponza_floor_a_n.png", settings: import_n);
   index.registerTextureFile(uuid: uuids::sponza::textures::sponza_floor_a_n,
                             file: "sponza_floor_a_n.texture",
                             defaultSampler: samplerInterpolated);
@@ -31,9 +41,15 @@ void registerMaterials(ResourceIndex@ index)
   
   index.registerMaterial(uuid: uuids::sponza::materials::details,
                          material: dummyMaterial);
-  
+                         
+  TexturedMaterial bricks_material;
+  //bricks_material.basecolor_map = TextureHandle(uuids::sponza::textures::spnza_bricks_a_basic_color);
+  bricks_material.normal_map = TextureHandle(uuids::sponza::textures::spnza_bricks_a_n);
+  //bricks_material.height_map = TextureHandle(uuids::sponza::textures::spnza_bricks_a_bump);
+  //bricks_material.srmo_map = TextureHandle(uuids::sponza::textures::spnza_bricks_a_srmo);
+                       
   index.registerMaterial(uuid: uuids::sponza::materials::bricks,
-                         material: dummyMaterial);
+                         material: bricks_material);
   
   index.registerMaterial(uuid: uuids::sponza::materials::column_a,
                          material: dummyMaterial);
