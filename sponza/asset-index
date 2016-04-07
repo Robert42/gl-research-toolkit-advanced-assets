@@ -11,7 +11,7 @@ void registerTextures(ResourceIndex@ index)
   importNormalMap.sourceIsNormalMap = true;
   
   index.convertTexture(textureFile: "sponza_floor_a_n.texture", sourceFile: "textures/sponza_floor_a_n.png", settings: importNormalMap);
-  index.registerTextureFile(uuid: uuids::sponza::textures::sponza_floor_a_basic_color,
+  index.registerTextureFile(uuid: uuids::sponza::textures::sponza_floor_a_n,
                             file: "sponza_floor_a_n.texture",
                             defaultSampler: samplerInterpolated);
 }
