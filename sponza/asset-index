@@ -12,6 +12,8 @@ void registerTextures(ResourceIndex@ index)
   
   TextureImportSettings import_n_inverted;
   import_n_inverted = import_n;
+  import_n_inverted.factor.x = -1;
+  import_n_inverted.factor.y = -1;
                             
   // spnza_bricks                          
   index.convertTexture(textureFile: "spnza_bricks_a_n.texture", sourceFile: "textures/spnza_bricks_a_ddn.tga", settings: import_n_inverted);
