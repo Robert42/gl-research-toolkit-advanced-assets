@@ -12,6 +12,17 @@ void registerTextures(ResourceIndex@ index)
   TextureImportSettings import_bump;
   import_bump.format = TextureFormat::R;
   import_bump.type = TextureType::INT8;
+  import_bump.sourceIsBumpMap = true;
+  
+  TextureImportSettings import_srmo_from_spec_and_ao;
+  import_srmo_from_spec_and_ao.format = TextureFormat::RGBA;
+  import_srmo_from_spec_and_ao.type = TextureType::INT8;
+  import_srmo_from_spec_and_ao.force_value.g = 0.5;
+  import_srmo_from_spec_and_ao.force_value.b = 0.0;
+  import_srmo_from_spec_and_ao.red_channel_suffix = "_spec.tga";
+  import_srmo_from_spec_and_ao.alpha_channel_suffix = "_ao.png";
+  import_srmo_from_spec_and_ao.merge_red_as_grey = true;
+  import_srmo_from_spec_and_ao.merge_alpha_as_grey = true;
   
   TextureImportSettings import_n;
   import_n.format = TextureFormat::RGB;
@@ -27,6 +38,7 @@ void registerTextures(ResourceIndex@ index)
   index.convertTexture(textureFile: "spnza_bricks_a_diff.texture", sourceFile: "textures/spnza_bricks_a_diff.tga", settings: import_diff);
   index.convertTexture(textureFile: "spnza_bricks_a_n.texture", sourceFile: "textures/spnza_bricks_a_ddn.tga", settings: import_n);
   index.convertTexture(textureFile: "spnza_bricks_a_bump.texture", sourceFile: "textures/spnza_bricks_a_bump.png", settings: import_bump);
+  index.convertTexture(textureFile: "spnza_bricks_a_srmo.texture", sourceFile: "textures/spnza_bricks_a_diff.tga", settings: import_srmo_from_spec_and_ao);
   index.registerTextureFile(uuid: uuids::sponza::textures::spnza_bricks_a_basic_color,
                             file: "spnza_bricks_a_diff.texture",
                             defaultSampler: samplerInterpolated);
@@ -35,6 +47,9 @@ void registerTextures(ResourceIndex@ index)
                             defaultSampler: samplerInterpolated);
   index.registerTextureFile(uuid: uuids::sponza::textures::spnza_bricks_a_bump,
                             file: "spnza_bricks_a_bump.texture",
+                            defaultSampler: samplerInterpolated);
+  index.registerTextureFile(uuid: uuids::sponza::textures::spnza_bricks_a_srmo,
+                            file: "spnza_bricks_a_srmo.texture",
                             defaultSampler: samplerInterpolated);
   
   // sponza_floor_a     
@@ -64,7 +79,7 @@ void registerMaterials(ResourceIndex@ index)
   bricks_material.basecolor_map = TextureHandle(uuids::sponza::textures::spnza_bricks_a_basic_color);
   bricks_material.normal_map = TextureHandle(uuids::sponza::textures::spnza_bricks_a_n);
   bricks_material.height_map = TextureHandle(uuids::sponza::textures::spnza_bricks_a_bump);
-  //bricks_material.srmo_map = TextureHandle(uuids::sponza::textures::spnza_bricks_a_srmo);
+  bricks_material.srmo_map = TextureHandle(uuids::sponza::textures::spnza_bricks_a_srmo);
                        
   index.registerMaterial(uuid: uuids::sponza::materials::bricks,
                          material: bricks_material);
