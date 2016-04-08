@@ -80,6 +80,8 @@ void registerMaterials(ResourceIndex@ index)
   bricks_material.normal_map = TextureHandle(uuids::sponza::textures::spnza_bricks_a_n);
   bricks_material.height_map = TextureHandle(uuids::sponza::textures::spnza_bricks_a_bump);
   bricks_material.srmo_map = TextureHandle(uuids::sponza::textures::spnza_bricks_a_srmo);
+  bricks_material.srmo_range_0 = vec4(0.25, 0, 0, 0.25);
+  bricks_material.srmo_range_1 = vec4(0.75, 1, 1, 1);
                        
   index.registerMaterial(uuid: uuids::sponza::materials::bricks,
                          material: bricks_material);
