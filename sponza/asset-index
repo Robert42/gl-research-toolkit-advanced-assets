@@ -79,8 +79,67 @@ void registerTextures(ResourceIndex@ index)
   index.registerTextureFile(uuid: uuids::sponza::textures::spnza_bricks_a_srmo,
                             file: "spnza_bricks_a_srmo.texture",
                             defaultSampler: samplerInterpolated);
+                            
+                            
+  // sponza_column_a
+  index.convertTexture(textureFile: "sponza_column_a_diff.texture", sourceFile: "textures/sponza_column_a_diff.tga", settings: import_diff);   
+  index.convertTexture(textureFile: "sponza_column_a_n.texture", sourceFile: "textures/sponza_column_a_ddn.tga", settings: import_n);
+  index.convertTexture(textureFile: "sponza_column_a_bump.texture", sourceFile: "textures/sponza_column_a_bump.png", settings: import_bump);
+  index.convertTexture(textureFile: "sponza_column_a_srmo.texture", sourceFile: "textures/sponza_column_a_diff.tga", settings: import_srmo_from_spec_and_ao);
+  index.registerTextureFile(uuid: uuids::sponza::textures::sponza_column_a_basic_color,
+                            file: "sponza_column_a_diff.texture",
+                            defaultSampler: samplerInterpolated);
+  index.registerTextureFile(uuid: uuids::sponza::textures::sponza_column_a_n,
+                            file: "sponza_column_a_n.texture",
+                            defaultSampler: samplerInterpolated);
+  index.registerTextureFile(uuid: uuids::sponza::textures::sponza_column_a_bump,
+                            file: "sponza_column_a_bump.texture",
+                            defaultSampler: samplerInterpolated);
+  index.registerTextureFile(uuid: uuids::sponza::textures::sponza_column_a_srmo,
+                            file: "sponza_column_a_srmo.texture",
+                            defaultSampler: samplerInterpolated);
+    
+  // sponza_column_b
+  index.convertTexture(textureFile: "sponza_column_b_diff.texture", sourceFile: "textures/sponza_column_b_diff.tga", settings: import_diff);   
+  index.convertTexture(textureFile: "sponza_column_b_n.texture", sourceFile: "textures/sponza_column_b_ddn.tga", settings: import_n);
+  index.convertTexture(textureFile: "sponza_column_b_bump.texture", sourceFile: "textures/sponza_column_b_bump.png", settings: import_bump);
+  index.convertTexture(textureFile: "sponza_column_b_srmo.texture", sourceFile: "textures/sponza_column_b_diff.tga", settings: import_srmo_from_spec_and_ao);
+  index.registerTextureFile(uuid: uuids::sponza::textures::sponza_column_b_basic_color,
+                            file: "sponza_column_b_diff.texture",
+                            defaultSampler: samplerInterpolated);
+  index.registerTextureFile(uuid: uuids::sponza::textures::sponza_column_b_n,
+                            file: "sponza_column_b_n.texture",
+                            defaultSampler: samplerInterpolated);
+  index.registerTextureFile(uuid: uuids::sponza::textures::sponza_column_b_bump,
+                            file: "sponza_column_b_bump.texture",
+                            defaultSampler: samplerInterpolated);
+  index.registerTextureFile(uuid: uuids::sponza::textures::sponza_column_b_srmo,
+                            file: "sponza_column_b_srmo.texture",
+                            defaultSampler: samplerInterpolated);
+    
+  // sponza_column_c
+  index.convertTexture(textureFile: "sponza_column_c_diff.texture", sourceFile: "textures/sponza_column_c_diff.tga", settings: import_diff);   
+  index.convertTexture(textureFile: "sponza_column_c_n.texture", sourceFile: "textures/sponza_column_c_ddn.tga", settings: import_n);
+  index.convertTexture(textureFile: "sponza_column_c_bump.texture", sourceFile: "textures/sponza_column_c_bump.png", settings: import_bump);
+  index.convertTexture(textureFile: "sponza_column_c_srmo.texture", sourceFile: "textures/sponza_column_c_diff.tga", settings: import_srmo_from_spec_and_ao);
+  index.registerTextureFile(uuid: uuids::sponza::textures::sponza_column_c_basic_color,
+                            file: "sponza_column_c_diff.texture",
+                            defaultSampler: samplerInterpolated);
+  index.registerTextureFile(uuid: uuids::sponza::textures::sponza_column_c_n,
+                            file: "sponza_column_c_n.texture",
+                            defaultSampler: samplerInterpolated);
+  index.registerTextureFile(uuid: uuids::sponza::textures::sponza_column_c_bump,
+                            file: "sponza_column_c_bump.texture",
+                            defaultSampler: samplerInterpolated);
+  index.registerTextureFile(uuid: uuids::sponza::textures::sponza_column_c_srmo,
+                            file: "sponza_column_c_srmo.texture",
+                            defaultSampler: samplerInterpolated);
+    
+  // sponza_ceiling
+  // arch
+  // roof
   
-  // sponza_floor_a  
+  // sponza_floor_a
   index.convertTexture(textureFile: "sponza_floor_a_diff.texture", sourceFile: "textures/sponza_floor_a_diff.tga", settings: import_diff);   
   index.convertTexture(textureFile: "sponza_floor_a_n.texture", sourceFile: "textures/sponza_floor_a_n.png", settings: import_n);
   index.convertTexture(textureFile: "sponza_floor_a_bump.texture", sourceFile: "textures/sponza_floor_a_bump.png", settings: import_bump);
@@ -131,15 +190,36 @@ void registerMaterials(ResourceIndex@ index)
   bricks_material.srmo_range_1 = vec4(0.75, 1, 1, 1);
   index.registerMaterial(uuid: uuids::sponza::materials::bricks,
                          material: bricks_material);
-  
+                         
+  TexturedMaterial column_a_material;
+  column_a_material.basecolor_map = TextureHandle(uuids::sponza::textures::sponza_column_a_basic_color);
+  column_a_material.normal_map = TextureHandle(uuids::sponza::textures::sponza_column_a_n);
+  column_a_material.height_map = TextureHandle(uuids::sponza::textures::sponza_column_a_bump);
+  column_a_material.srmo_map = TextureHandle(uuids::sponza::textures::sponza_column_a_srmo);
+  column_a_material.srmo_range_0 = vec4(0.25, 0, 0, 0);
+  column_a_material.srmo_range_1 = vec4(0.75, 1, 1, 1);  
   index.registerMaterial(uuid: uuids::sponza::materials::column_a,
-                         material: dummyMaterial);
-  
+                         material: column_a_material);
+                         
+  TexturedMaterial column_b_material;
+  column_b_material.basecolor_map = TextureHandle(uuids::sponza::textures::sponza_column_b_basic_color);
+  column_b_material.normal_map = TextureHandle(uuids::sponza::textures::sponza_column_b_n);
+  column_b_material.height_map = TextureHandle(uuids::sponza::textures::sponza_column_b_bump);
+  column_b_material.srmo_map = TextureHandle(uuids::sponza::textures::sponza_column_b_srmo);
+  column_b_material.srmo_range_0 = vec4(0.25, 0, 0, 0);
+  column_b_material.srmo_range_1 = vec4(0.75, 1, 1, 1);  
   index.registerMaterial(uuid: uuids::sponza::materials::column_b,
-                         material: dummyMaterial);
-  
+                         material: column_b_material);
+                         
+  TexturedMaterial column_c_material;
+  column_c_material.basecolor_map = TextureHandle(uuids::sponza::textures::sponza_column_c_basic_color);
+  column_c_material.normal_map = TextureHandle(uuids::sponza::textures::sponza_column_c_n);
+  column_c_material.height_map = TextureHandle(uuids::sponza::textures::sponza_column_c_bump);
+  column_c_material.srmo_map = TextureHandle(uuids::sponza::textures::sponza_column_c_srmo);
+  column_c_material.srmo_range_0 = vec4(0.25, 0, 0, 0);
+  column_c_material.srmo_range_1 = vec4(0.75, 1, 1, 1);  
   index.registerMaterial(uuid: uuids::sponza::materials::column_c,
-                         material: dummyMaterial);
+                         material: column_c_material);
   
   index.registerMaterial(uuid: uuids::sponza::materials::ceiling,
                          material: dummyMaterial);

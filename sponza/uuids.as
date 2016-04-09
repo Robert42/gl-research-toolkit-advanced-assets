@@ -65,10 +65,56 @@ Uuid<Texture> spnza_bricks_a_n = Uuid<Texture>("{5df63c0a-27f2-405f-a32f-ec1c0fe
 Uuid<Texture> spnza_bricks_a_bump = Uuid<Texture>("{708f72d3-0722-42a0-9d86-a0bc7240e66e}");
 Uuid<Texture> spnza_bricks_a_srmo = Uuid<Texture>("{2d750109-c499-4733-ad91-eea3ac001337}");
 
+Uuid<Texture> sponza_column_a_basic_color = Uuid<Texture>("{945e78e3-50f8-4a34-b6fe-7d304db94e10}");
+Uuid<Texture> sponza_column_a_n = Uuid<Texture>("{f5f8f654-3524-41f7-bd11-2d30369f5e7a}");
+Uuid<Texture> sponza_column_a_bump = Uuid<Texture>("{90e201b0-5923-41a5-8bed-af4849628650}");
+Uuid<Texture> sponza_column_a_srmo = Uuid<Texture>("{d2be34c0-643d-42fb-9afe-870e08e33e0b}");
+
+Uuid<Texture> sponza_column_b_basic_color = Uuid<Texture>("{8a049585-99df-42f2-b3a5-f4b056b1601e}");
+Uuid<Texture> sponza_column_b_n = Uuid<Texture>("{67d3a6a7-86fa-4322-9569-207cbbb01d27}");
+Uuid<Texture> sponza_column_b_bump = Uuid<Texture>("{c5f743fc-88a1-4805-a9a5-60489e75f4d5}");
+Uuid<Texture> sponza_column_b_srmo = Uuid<Texture>("{92918a7e-d2eb-4955-8ba3-19050bda2523}");
+
+Uuid<Texture> sponza_column_c_basic_color = Uuid<Texture>("{41d0e989-00d2-425b-b793-c4301bf4b78f}");
+Uuid<Texture> sponza_column_c_n = Uuid<Texture>("{0e1fa72c-083a-42f4-a159-0217c95fee95}");
+Uuid<Texture> sponza_column_c_bump = Uuid<Texture>("{e33bbf3c-5f53-45ea-ae58-8198584c9342}");
+Uuid<Texture> sponza_column_c_srmo = Uuid<Texture>("{0c77ffe6-ced1-48cb-8e73-dafc5ecb93ec}");
+
+Uuid<Texture> sponza_ceiling_basic_color = Uuid<Texture>("{27fb51b2-0278-4297-bd1b-0cf1f3ecc4c3}");
+Uuid<Texture> sponza_ceiling_n = Uuid<Texture>("{ea745f90-88be-4fdd-8240-22fb1aea42a2}");
+Uuid<Texture> sponza_ceiling_bump = Uuid<Texture>("{7e30ee9a-805f-43db-9a34-5b912a00b2fd}");
+Uuid<Texture> sponza_ceiling_srmo = Uuid<Texture>("{c2241c97-c15d-4dc7-95d9-89a798d7699a}");
+
+Uuid<Texture> sponza_arch_basic_color = Uuid<Texture>("{b359c834-1e68-47d0-95e6-5b3c43fd4c35}");
+Uuid<Texture> sponza_arch_n = Uuid<Texture>("{82b6825e-e03f-46ab-bf38-f05afd513784}");
+Uuid<Texture> sponza_arch_bump = Uuid<Texture>("{520451bf-5d7a-4633-8ac8-0ad8ea19419a}");
+Uuid<Texture> sponza_arch_srmo = Uuid<Texture>("{c598d5b3-ef69-4730-9263-82b0c841afcd}");
+
+Uuid<Texture> sponza_roof_basic_color = Uuid<Texture>("{80564827-41cf-432b-b9a2-79958a81d7a4}");
+Uuid<Texture> sponza_roof_n = Uuid<Texture>("{2b9ca34b-b19c-41a4-8b6a-ccac37d1337a}");
+Uuid<Texture> sponza_roof_bump = Uuid<Texture>("{2ba01fbc-fc4b-489c-bcd7-59d4a452bb5a}");
+Uuid<Texture> sponza_roof_srmo = Uuid<Texture>("{a23bb0b3-9bdf-4310-a906-ae4d8efdc957}");
+
 Uuid<Texture> sponza_floor_a_basic_color = Uuid<Texture>("{84f57d4d-7bfe-43ce-8bd3-8053d4cf0410}");
 Uuid<Texture> sponza_floor_a_n = Uuid<Texture>("{de663aee-30e8-4755-a6ab-4f14a1245922}");
 Uuid<Texture> sponza_floor_a_bump = Uuid<Texture>("{88a57e1c-53b2-4f7e-8f37-e69a9814da8a}");
 Uuid<Texture> sponza_floor_a_srmo = Uuid<Texture>("{3ce94f63-9705-48be-9399-1e5b52fc08de}");
+
+Uuid<Texture> sponza_flagpole_basic_color = Uuid<Texture>("{da447d2b-8f54-4055-ad02-7d47b73ccde2}");
+Uuid<Texture> sponza_flagpole_n = Uuid<Texture>("{8469a51f-9ead-45ad-9055-9970da2e55c1}");
+Uuid<Texture> sponza_flagpole_bump = Uuid<Texture>("{2e6fe446-1957-4d30-89b2-ba62ef551871}");
+Uuid<Texture> sponza_flagpole_srmo = Uuid<Texture>("{bcee98f6-3655-48a6-977f-2408a3f329e2}");
+
+Uuid<Texture> sponza_vase_hanging_basic_color = Uuid<Texture>("{2a4ab644-db39-4900-9509-9c57ad4974c4}");
+Uuid<Texture> sponza_vase_hanging_n = Uuid<Texture>("{e32d485a-5952-44c1-9040-c48c80975192}");
+Uuid<Texture> sponza_vase_hanging_bump = Uuid<Texture>("{3283ae98-4038-4dbb-b724-930ed24e5c6d}");
+Uuid<Texture> sponza_vase_hanging_srmo = Uuid<Texture>("{9c1357af-6866-4085-9e7e-b1fa68cc96e7}");
+
+Uuid<Texture> sponza_chain_basic_color = Uuid<Texture>("{8b051e04-663e-4252-8b57-429da1d10c5a}");
+Uuid<Texture> sponza_chain_n = Uuid<Texture>("{418cb090-f979-4558-872f-4c3e6574c5a4}");
+Uuid<Texture> sponza_chain_bump = Uuid<Texture>("{18855066-1788-47d9-bf98-79099ed2af7d}");
+Uuid<Texture> sponza_chain_srmo = Uuid<Texture>("{f45f2a95-42f5-44e5-b102-f1643906455a}");
+
 } // namespace textures
 
 } // namespace sponza
