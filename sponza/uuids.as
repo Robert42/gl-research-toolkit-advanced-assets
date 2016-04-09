@@ -105,15 +105,49 @@ Uuid<Texture> sponza_flagpole_n = Uuid<Texture>("{8469a51f-9ead-45ad-9055-9970da
 Uuid<Texture> sponza_flagpole_bump = Uuid<Texture>("{2e6fe446-1957-4d30-89b2-ba62ef551871}");
 Uuid<Texture> sponza_flagpole_srmo = Uuid<Texture>("{bcee98f6-3655-48a6-977f-2408a3f329e2}");
 
-Uuid<Texture> sponza_vase_hanging_basic_color = Uuid<Texture>("{2a4ab644-db39-4900-9509-9c57ad4974c4}");
-Uuid<Texture> sponza_vase_hanging_n = Uuid<Texture>("{e32d485a-5952-44c1-9040-c48c80975192}");
-Uuid<Texture> sponza_vase_hanging_bump = Uuid<Texture>("{3283ae98-4038-4dbb-b724-930ed24e5c6d}");
-Uuid<Texture> sponza_vase_hanging_srmo = Uuid<Texture>("{9c1357af-6866-4085-9e7e-b1fa68cc96e7}");
+Uuid<Texture> vase_hanging_basic_color = Uuid<Texture>("{85a95692-6d93-4bc1-ab0b-2db7f6e2ea85}");
 
-Uuid<Texture> sponza_chain_basic_color = Uuid<Texture>("{8b051e04-663e-4252-8b57-429da1d10c5a}");
-Uuid<Texture> sponza_chain_n = Uuid<Texture>("{418cb090-f979-4558-872f-4c3e6574c5a4}");
-Uuid<Texture> sponza_chain_bump = Uuid<Texture>("{18855066-1788-47d9-bf98-79099ed2af7d}");
-Uuid<Texture> sponza_chain_srmo = Uuid<Texture>("{f45f2a95-42f5-44e5-b102-f1643906455a}");
+Uuid<Texture> chain_basic_color = Uuid<Texture>("{8b051e04-663e-4252-8b57-429da1d10c5a}");
+Uuid<Texture> chain_n = Uuid<Texture>("{418cb090-f979-4558-872f-4c3e6574c5a4}");
+Uuid<Texture> chain_bump = Uuid<Texture>("{18855066-1788-47d9-bf98-79099ed2af7d}");
+Uuid<Texture> chain_srmo = Uuid<Texture>("{f45f2a95-42f5-44e5-b102-f1643906455a}");
+
+Uuid<Texture> vase_basic_color = Uuid<Texture>("{772851b2-5c0a-40c0-aed4-316de5e580c5}");
+Uuid<Texture> vase_n = Uuid<Texture>("{fd4af73d-df75-4f6d-a121-a6a6ce78464c}");
+Uuid<Texture> vase_bump = Uuid<Texture>("{4dbf316b-6595-4634-8050-eb78ca5a7771}");
+Uuid<Texture> vase_srmo = Uuid<Texture>("{34deee94-fadd-484d-8c5d-d62054373a95}");
+
+Uuid<Texture> vase_round_basic_color = Uuid<Texture>("{8d97d5b4-da1f-4f51-b68c-f0970cb7b3d0}");
+Uuid<Texture> vase_round_n = Uuid<Texture>("{de4ffa26-ef69-487c-87ad-01709f8255dd}");
+Uuid<Texture> vase_round_bump = Uuid<Texture>("{92366498-e0c9-4187-b035-26611526262f}");
+Uuid<Texture> vase_round_srmo = Uuid<Texture>("{dd1042fb-401b-4f1b-8bdf-8180e487d7b2}");
+
+Uuid<Texture> fabric_a_basic_color = Uuid<Texture>("{e2c02421-3f16-46a2-85de-a1c13a96e12c}");
+Uuid<Texture> fabric_b_basic_color = Uuid<Texture>("{8c4acef8-c4d5-46ce-a9fa-ce78ae6f963e}");
+Uuid<Texture> fabric_c_basic_color = Uuid<Texture>("{3f1886e3-67b1-481b-a610-7af38ad41d9f}");
+Uuid<Texture> fabric_d_basic_color = Uuid<Texture>("{c9824fec-5f73-4d54-846b-ece6f0994082}");
+Uuid<Texture> fabric_e_basic_color = Uuid<Texture>("{3ac4f467-701d-41b9-b359-58308d75551f}");
+Uuid<Texture> fabric_f_basic_color = Uuid<Texture>("{61fed08d-d4ba-48ad-b1e6-9b91f061d162}");
+Uuid<Texture> fabric_g_basic_color = Uuid<Texture>("{1d0c91ea-7896-436d-a74f-2b2860dd1187}");
+//Uuid<Texture> fabric_n = Uuid<Texture>("{79750ee0-24b8-48b2-becd-59817881a5d6}");
+//Uuid<Texture> fabric_bump = Uuid<Texture>("{c890da50-d4ba-465e-b639-84b947391677}");
+Uuid<Texture> fabric_curtain_srmo = Uuid<Texture>("{18f53c47-7785-481a-8843-b6fc19d83d14}");
+Uuid<Texture> fabric_fabrics_srmo = Uuid<Texture>("{cbed29e1-c326-44d5-8cea-908b35a163e9}");
+
+Uuid<Texture> leaf_basic_color = Uuid<Texture>("{b64761c9-031c-4280-8d7a-485fbb457f54}");
+Uuid<Texture> leaf_n = Uuid<Texture>("{06cd6aa9-e844-4e79-9aa7-1b9f0fe440ef}");
+Uuid<Texture> leaf_bump = Uuid<Texture>("{50bf3528-b846-4d3c-ac0e-48b287f1fa96}");
+Uuid<Texture> leaf_srmo = Uuid<Texture>("{dc4d4015-293d-4567-89a1-80ea544b499a}");
+
+Uuid<Texture> lion_shield_basic_color = Uuid<Texture>("{76aa603d-7052-4294-abcc-807a50da4f9e}");
+Uuid<Texture> lion_shield_n = Uuid<Texture>("{b6bfc42d-5239-455a-ae36-a5f375987461}");
+Uuid<Texture> lion_shield_bump = Uuid<Texture>("{9b7cdb4f-1585-4a10-8abd-8e552f2e1076}");
+Uuid<Texture> lion_shield_srmo = Uuid<Texture>("{df43b359-4d9a-4347-a9a6-156fac1063da}");
+
+Uuid<Texture> lion_basic_color = Uuid<Texture>("{9e9a7bfd-b57d-4956-9f1b-8c1aae35d61f}");
+Uuid<Texture> lion_n = Uuid<Texture>("{b64c924a-6f71-4e0c-9e2a-1ff2f622ebc2}");
+Uuid<Texture> lion_bump = Uuid<Texture>("{f6661dae-a957-493a-89e1-a5f2d174a267}");
+Uuid<Texture> lion_srmo = Uuid<Texture>("{c86e63e7-3c34-418a-8fba-660f3d12cd0b}");
 
 } // namespace textures
 
