@@ -55,6 +55,11 @@ Uuid<LightSource> sunLight = Uuid<LightSource>("{3048203a-6c67-41fd-a3b1-c0a300d
 } // namespace lights
 
 namespace textures {
+Uuid<Texture> spnza_details_basic_color = Uuid<Texture>("{2c59a487-7155-43e6-b68e-0a6299de9caf}");
+Uuid<Texture> spnza_details_n = Uuid<Texture>("{aee3d7a3-6a6b-49d1-a381-b8479b5dbc65}");
+Uuid<Texture> spnza_details_bump = Uuid<Texture>("{b6ef515c-2c78-4b9c-8dd7-90fb383301fe}");
+Uuid<Texture> spnza_details_srmo = Uuid<Texture>("{ffe249b8-b030-42e2-b5c8-4b8447fd1fd0}");
+
 Uuid<Texture> spnza_bricks_a_basic_color = Uuid<Texture>("{6bc65aca-5c9a-4424-9c2d-f850e81955f5}");
 Uuid<Texture> spnza_bricks_a_n = Uuid<Texture>("{5df63c0a-27f2-405f-a32f-ec1c0fe8edd5}");
 Uuid<Texture> spnza_bricks_a_bump = Uuid<Texture>("{708f72d3-0722-42a0-9d86-a0bc7240e66e}");
