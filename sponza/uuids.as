@@ -80,10 +80,10 @@ Uuid<Texture> sponza_column_c_n = Uuid<Texture>("{0e1fa72c-083a-42f4-a159-0217c9
 Uuid<Texture> sponza_column_c_bump = Uuid<Texture>("{e33bbf3c-5f53-45ea-ae58-8198584c9342}");
 Uuid<Texture> sponza_column_c_srmo = Uuid<Texture>("{0c77ffe6-ced1-48cb-8e73-dafc5ecb93ec}");
 
-Uuid<Texture> sponza_ceiling_basic_color = Uuid<Texture>("{27fb51b2-0278-4297-bd1b-0cf1f3ecc4c3}");
-Uuid<Texture> sponza_ceiling_n = Uuid<Texture>("{ea745f90-88be-4fdd-8240-22fb1aea42a2}");
-Uuid<Texture> sponza_ceiling_bump = Uuid<Texture>("{7e30ee9a-805f-43db-9a34-5b912a00b2fd}");
-Uuid<Texture> sponza_ceiling_srmo = Uuid<Texture>("{c2241c97-c15d-4dc7-95d9-89a798d7699a}");
+Uuid<Texture> sponza_ceiling_a_basic_color = Uuid<Texture>("{27fb51b2-0278-4297-bd1b-0cf1f3ecc4c3}");
+Uuid<Texture> sponza_ceiling_a_n = Uuid<Texture>("{ea745f90-88be-4fdd-8240-22fb1aea42a2}");
+Uuid<Texture> sponza_ceiling_a_bump = Uuid<Texture>("{7e30ee9a-805f-43db-9a34-5b912a00b2fd}");
+Uuid<Texture> sponza_ceiling_a_srmo = Uuid<Texture>("{c2241c97-c15d-4dc7-95d9-89a798d7699a}");
 
 Uuid<Texture> sponza_arch_basic_color = Uuid<Texture>("{b359c834-1e68-47d0-95e6-5b3c43fd4c35}");
 Uuid<Texture> sponza_arch_n = Uuid<Texture>("{82b6825e-e03f-46ab-bf38-f05afd513784}");

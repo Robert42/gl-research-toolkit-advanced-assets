@@ -136,8 +136,58 @@ void registerTextures(ResourceIndex@ index)
                             defaultSampler: samplerInterpolated);
     
   // sponza_ceiling
-  // arch
-  // roof
+  index.convertTexture(textureFile: "sponza_ceiling_a_diff.texture", sourceFile: "textures/sponza_ceiling_a_diff.tga", settings: import_diff);   
+  index.convertTexture(textureFile: "sponza_ceiling_a_n.texture", sourceFile: "textures/sponza_ceiling_a_n.png", settings: import_n);
+  index.convertTexture(textureFile: "sponza_ceiling_a_bump.texture", sourceFile: "textures/sponza_ceiling_a_bump.png", settings: import_bump);
+  index.convertTexture(textureFile: "sponza_ceiling_a_srmo.texture", sourceFile: "textures/sponza_ceiling_a_diff.tga", settings: import_srmo_from_spec_and_ao);
+  index.registerTextureFile(uuid: uuids::sponza::textures::sponza_ceiling_a_basic_color,
+                            file: "sponza_ceiling_a_diff.texture",
+                            defaultSampler: samplerInterpolated);
+  index.registerTextureFile(uuid: uuids::sponza::textures::sponza_ceiling_a_n,
+                            file: "sponza_ceiling_a_n.texture",
+                            defaultSampler: samplerInterpolated);
+  index.registerTextureFile(uuid: uuids::sponza::textures::sponza_ceiling_a_bump,
+                            file: "sponza_ceiling_a_bump.texture",
+                            defaultSampler: samplerInterpolated);
+  index.registerTextureFile(uuid: uuids::sponza::textures::sponza_ceiling_a_srmo,
+                            file: "sponza_ceiling_a_srmo.texture",
+                            defaultSampler: samplerInterpolated);
+                            
+  // sponza_arch
+  index.convertTexture(textureFile: "sponza_arch_diff.texture", sourceFile: "textures/sponza_arch_diff.tga", settings: import_diff);   
+  index.convertTexture(textureFile: "sponza_arch_n.texture", sourceFile: "textures/sponza_arch_ddn.tga", settings: import_n);
+  index.convertTexture(textureFile: "sponza_arch_bump.texture", sourceFile: "textures/sponza_arch_bump.png", settings: import_bump);
+  index.convertTexture(textureFile: "sponza_arch_srmo.texture", sourceFile: "textures/sponza_arch_diff.tga", settings: import_srmo_from_spec_and_ao);
+  index.registerTextureFile(uuid: uuids::sponza::textures::sponza_arch_basic_color,
+                            file: "sponza_arch_diff.texture",
+                            defaultSampler: samplerInterpolated);
+  index.registerTextureFile(uuid: uuids::sponza::textures::sponza_arch_n,
+                            file: "sponza_arch_n.texture",
+                            defaultSampler: samplerInterpolated);
+  index.registerTextureFile(uuid: uuids::sponza::textures::sponza_arch_bump,
+                            file: "sponza_arch_bump.texture",
+                            defaultSampler: samplerInterpolated);
+  index.registerTextureFile(uuid: uuids::sponza::textures::sponza_arch_srmo,
+                            file: "sponza_arch_srmo.texture",
+                            defaultSampler: samplerInterpolated);
+                            
+  // sponza_roof
+  index.convertTexture(textureFile: "sponza_roof_diff.texture", sourceFile: "textures/sponza_roof_diff.tga", settings: import_diff);   
+  //index.convertTexture(textureFile: "sponza_roof_n.texture", sourceFile: "textures/sponza_roof_ddn.tga", settings: import_n);
+  //index.convertTexture(textureFile: "sponza_roof_bump.texture", sourceFile: "textures/sponza_roof_bump.png", settings: import_bump);
+  //index.convertTexture(textureFile: "sponza_roof_srmo.texture", sourceFile: "textures/sponza_roof_diff.tga", settings: import_srmo_from_spec_and_ao);
+  index.registerTextureFile(uuid: uuids::sponza::textures::sponza_roof_basic_color,
+                            file: "sponza_roof_diff.texture",
+                            defaultSampler: samplerInterpolated);
+  //index.registerTextureFile(uuid: uuids::sponza::textures::sponza_roof_n,
+  //                          file: "sponza_roof_n.texture",
+  //                          defaultSampler: samplerInterpolated);
+  //index.registerTextureFile(uuid: uuids::sponza::textures::sponza_roof_bump,
+  //                          file: "sponza_roof_bump.texture",
+  //                          defaultSampler: samplerInterpolated);
+  //index.registerTextureFile(uuid: uuids::sponza::textures::sponza_roof_srmo,
+  //                          file: "sponza_roof_srmo.texture",
+  //                          defaultSampler: samplerInterpolated);
   
   // sponza_floor_a
   index.convertTexture(textureFile: "sponza_floor_a_diff.texture", sourceFile: "textures/sponza_floor_a_diff.tga", settings: import_diff);   
@@ -220,15 +270,36 @@ void registerMaterials(ResourceIndex@ index)
   column_c_material.srmo_range_1 = vec4(0.75, 1, 1, 1);  
   index.registerMaterial(uuid: uuids::sponza::materials::column_c,
                          material: column_c_material);
-  
+                         
+  TexturedMaterial ceiling_a_material;
+  ceiling_a_material.basecolor_map = TextureHandle(uuids::sponza::textures::sponza_ceiling_a_basic_color);
+  ceiling_a_material.normal_map = TextureHandle(uuids::sponza::textures::sponza_ceiling_a_n);
+  ceiling_a_material.height_map = TextureHandle(uuids::sponza::textures::sponza_ceiling_a_bump);
+  ceiling_a_material.srmo_map = TextureHandle(uuids::sponza::textures::sponza_ceiling_a_srmo);
+  ceiling_a_material.srmo_range_0 = vec4(0.25, 0, 0, 0);
+  ceiling_a_material.srmo_range_1 = vec4(0.75, 1, 1, 1);  
   index.registerMaterial(uuid: uuids::sponza::materials::ceiling,
-                         material: dummyMaterial);
-  
+                         material: ceiling_a_material);
+                         
+  TexturedMaterial arch_material;
+  arch_material.basecolor_map = TextureHandle(uuids::sponza::textures::sponza_arch_basic_color);
+  arch_material.normal_map = TextureHandle(uuids::sponza::textures::sponza_arch_n);
+  arch_material.height_map = TextureHandle(uuids::sponza::textures::sponza_arch_bump);
+  arch_material.srmo_map = TextureHandle(uuids::sponza::textures::sponza_arch_srmo);
+  arch_material.srmo_range_0 = vec4(0.25, 0, 0, 0);
+  arch_material.srmo_range_1 = vec4(0.75, 1, 1, 1);  
   index.registerMaterial(uuid: uuids::sponza::materials::arch,
-                         material: dummyMaterial);
-  
+                         material: arch_material);
+                         
+  TexturedMaterial roof_material;
+  roof_material.basecolor_map = TextureHandle(uuids::sponza::textures::sponza_roof_basic_color);
+  //roof_material.normal_map = TextureHandle(uuids::sponza::textures::sponza_roof_n);
+  //roof_material.height_map = TextureHandle(uuids::sponza::textures::sponza_roof_bump);
+  //roof_material.srmo_map = TextureHandle(uuids::sponza::textures::sponza_roof_srmo);
+  roof_material.srmo_range_0 = vec4(0.25, 0, 0, 0);
+  roof_material.srmo_range_1 = vec4(0.75, 1, 1, 1);  
   index.registerMaterial(uuid: uuids::sponza::materials::roof,
-                         material: dummyMaterial);
+                        material: roof_material);
                          
   TexturedMaterial floor_material;
   floor_material.basecolor_map = TextureHandle(uuids::sponza::textures::sponza_floor_a_basic_color);
