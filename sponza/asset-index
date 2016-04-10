@@ -334,7 +334,7 @@ void registerTextures(ResourceIndex@ index)
   import_srmo_fabric.type = TextureType::UINT8;
   import_srmo_fabric.red_channel_suffix = "_spec.tga";
   import_srmo_fabric.merge_red_as_grey = true;
-  import_srmo_fabric.force_value.b = 1.0;
+  import_srmo_fabric.force_value.g = 1.0;
   import_srmo_fabric.blue_channel_suffix = "_metallic.png";
   import_srmo_fabric.merge_blue_as_grey = true;
   import_srmo_fabric.force_value.a = 1.0;
