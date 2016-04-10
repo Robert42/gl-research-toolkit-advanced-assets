@@ -362,8 +362,58 @@ void registerTextures(ResourceIndex@ index)
   index.registerTextureFile(uuid: uuids::sponza::textures::curtain_srmo, file: "sponza_curtain_srmo.texture", defaultSampler: samplerInterpolated);
   
   // leaf
+  index.convertTexture(textureFile: "thorn_basic_color.texture", sourceFile: "textures/sponza_thorn_diff.tga", settings: import_diff_with_mask);   
+  index.convertTexture(textureFile: "thorn_ddn.texture", sourceFile: "textures/sponza_thorn_ddn.tga", settings: import_n);
+  index.convertTexture(textureFile: "thorn_bump.texture", sourceFile: "textures/sponza_thorn_bump.png", settings: import_bump);
+  index.convertTexture(textureFile: "thorn_srmo.texture", sourceFile: "textures/sponza_thorn_diff.tga", settings: import_srmo_from_spec_and_ao);
+  index.registerTextureFile(uuid: uuids::sponza::textures::leaf_basic_color,
+      file: "thorn_basic_color.texture",
+      defaultSampler: samplerInterpolated);
+  index.registerTextureFile(uuid: uuids::sponza::textures:: leaf_n,
+      file: "thorn_ddn.texture",
+      defaultSampler: samplerInterpolated);
+  index.registerTextureFile(uuid: uuids::sponza::textures:: leaf_bump,
+      file: "thorn_bump.texture",
+      defaultSampler: samplerInterpolated);
+  index.registerTextureFile(uuid: uuids::sponza::textures:: leaf_srmo,
+      file: "thorn_srmo.texture",
+      defaultSampler: samplerInterpolated);
+      
   // lion_shield
+  index.convertTexture(textureFile: "lion_diff.texture", sourceFile: "textures/lion_diff.tga", settings: import_diff);   
+  index.convertTexture(textureFile: "lion_n.texture", sourceFile: "textures/lion_ddn.tga", settings: import_n);
+  index.convertTexture(textureFile: "lion_bump.texture", sourceFile: "textures/lion_bump.png", settings: import_bump);
+  index.convertTexture(textureFile: "lion_srmo.texture", sourceFile: "textures/lion_diff.tga", settings: import_srmo_from_spec_and_ao);
+  index.registerTextureFile(uuid: uuids::sponza::textures::lion_basic_color,
+      file: "lion_diff.texture",
+      defaultSampler: samplerInterpolated);
+  index.registerTextureFile(uuid: uuids::sponza::textures::lion_n,
+      file: "lion_n.texture",
+      defaultSampler: samplerInterpolated);
+  index.registerTextureFile(uuid: uuids::sponza::textures::lion_bump,
+      file: "lion_bump.texture",
+      defaultSampler: samplerInterpolated);
+  index.registerTextureFile(uuid: uuids::sponza::textures::lion_srmo,
+      file: "lion_srmo.texture",
+      defaultSampler: samplerInterpolated);
+      
   // lion
+  index.convertTexture(textureFile: "lion_shield_diff.texture", sourceFile: "textures/lion_shield_diff.tga", settings: import_diff);   
+  index.convertTexture(textureFile: "lion_shield_n.texture", sourceFile: "textures/lion_shield_ddn.tga", settings: import_n);
+  index.convertTexture(textureFile: "lion_shield_bump.texture", sourceFile: "textures/lion_shield_bump.png", settings: import_bump);
+  index.convertTexture(textureFile: "lion_shield_srmo.texture", sourceFile: "textures/lion_shield_diff.tga", settings: import_srmo_from_spec_and_ao);
+  index.registerTextureFile(uuid: uuids::sponza::textures::lion_shield_basic_color,
+      file: "lion_shield_diff.texture",
+      defaultSampler: samplerInterpolated);
+  index.registerTextureFile(uuid: uuids::sponza::textures::lion_shield_n,
+      file: "lion_shield_n.texture",
+      defaultSampler: samplerInterpolated);
+  index.registerTextureFile(uuid: uuids::sponza::textures::lion_shield_bump,
+      file: "lion_shield_bump.texture",
+      defaultSampler: samplerInterpolated);
+  index.registerTextureFile(uuid: uuids::sponza::textures::lion_shield_srmo,
+      file: "lion_shield_srmo.texture",
+      defaultSampler: samplerInterpolated);
 }
 
 void registerMaterials(ResourceIndex@ index)
@@ -567,14 +617,26 @@ void registerMaterials(ResourceIndex@ index)
   TexturedMaterial leaf_material;
   leaf_material.masked = true;
   leaf_material.two_sided = true;
+  leaf_material.basecolor_map = TextureHandle(uuids::sponza::textures::leaf_basic_color);
+  leaf_material.normal_map = TextureHandle(uuids::sponza::textures::leaf_n);
+  leaf_material.height_map = TextureHandle(uuids::sponza::textures::leaf_bump);
+  leaf_material.srmo_map = TextureHandle(uuids::sponza::textures::leaf_srmo);
   index.registerMaterial(uuid: uuids::sponza::materials::leaf,
                          material: leaf_material);
   
   TexturedMaterial lion_shield_material;
+  lion_shield_material.basecolor_map = TextureHandle(uuids::sponza::textures::lion_shield_basic_color);
+  lion_shield_material.normal_map = TextureHandle(uuids::sponza::textures::lion_shield_n);
+  lion_shield_material.height_map = TextureHandle(uuids::sponza::textures::lion_shield_bump);
+  lion_shield_material.srmo_map = TextureHandle(uuids::sponza::textures::lion_shield_srmo);
   index.registerMaterial(uuid: uuids::sponza::materials::lion_shield,
                          material: lion_shield_material);
   
   TexturedMaterial lion_material;
+  lion_material.basecolor_map = TextureHandle(uuids::sponza::textures::lion_basic_color);
+  lion_material.normal_map = TextureHandle(uuids::sponza::textures::lion_n);
+  lion_material.height_map = TextureHandle(uuids::sponza::textures::lion_bump);
+  lion_material.srmo_map = TextureHandle(uuids::sponza::textures::lion_srmo);
   index.registerMaterial(uuid: uuids::sponza::materials::lion,
                          material: lion_material);
                          
