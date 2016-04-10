@@ -7,7 +7,7 @@ void registerTextures(ResourceIndex@ index)
   
   TextureImportSettings import_diff;
   import_diff.format = TextureFormat::RGB;
-  import_diff.type = TextureType::INT8;
+  import_diff.type = TextureType::UINT8;
   
   TextureImportSettings import_diff_with_mask;
   import_diff_with_mask.format = TextureFormat::RGBA;
