@@ -31,13 +31,13 @@ void registerTextures(ResourceIndex@ index)
   
   TextureImportSettings import_srmo_from_spec_and_ao;
   import_srmo_from_spec_and_ao = import_srmo_from_spec;
-  import_srmo_from_spec.force_value.a = import_srmo_from_spec.force_value.r;
+  import_srmo_from_spec_and_ao.force_value.a = import_srmo_from_spec.force_value.r;
   import_srmo_from_spec_and_ao.alpha_channel_suffix = "_ao.png";
   import_srmo_from_spec_and_ao.merge_alpha_as_grey = true;
   
   TextureImportSettings import_srmo_from_spec_ref_and_ao;
   import_srmo_from_spec_ref_and_ao = import_srmo_from_spec_and_ao;
-  import_srmo_from_spec_ref_and_ao.alpha_channel_suffix = "_ref.tga";
+  import_srmo_from_spec_ref_and_ao.green_channel_suffix = "_ref.tga";
   import_srmo_from_spec_ref_and_ao.force_value.g = import_srmo_from_spec_and_ao.force_value.r;
   import_srmo_from_spec_ref_and_ao.merge_green_as_grey;
   
@@ -52,14 +52,14 @@ void registerTextures(ResourceIndex@ index)
   import_srmo_from_spec_and_metal.merge_blue_as_grey = true;
   
   TextureImportSettings import_srmo_from_spec_as_metal;
-  import_srmo_from_spec_and_metal.format = TextureFormat::RGBA;
-  import_srmo_from_spec_and_metal.type = TextureType::UINT8;
-    import_srmo_from_spec_and_metal.red_channel_suffix = "_spec.tga";
-    import_srmo_from_spec_and_metal.merge_red_as_grey = true;
-  import_srmo_from_spec_and_metal.force_value.g = 0.5;
-    import_srmo_from_spec_and_metal.blue_channel_suffix = "_spec.tga";
-    import_srmo_from_spec_and_metal.merge_blue_as_grey = true;
-  import_srmo_from_spec_and_metal.force_value.a = 1.0;
+  import_srmo_from_spec_as_metal.format = TextureFormat::RGBA;
+  import_srmo_from_spec_as_metal.type = TextureType::UINT8;
+    import_srmo_from_spec_as_metal.red_channel_suffix = "_spec.tga";
+    import_srmo_from_spec_as_metal.merge_red_as_grey = true;
+  import_srmo_from_spec_as_metal.force_value.g = 0.5;
+    import_srmo_from_spec_as_metal.blue_channel_suffix = "_spec.tga";
+    import_srmo_from_spec_as_metal.merge_blue_as_grey = true;
+  import_srmo_from_spec_as_metal.force_value.a = 1.0;
   
   TextureImportSettings import_n;
   import_n.format = TextureFormat::RGB;
