@@ -329,6 +329,38 @@ void registerTextures(ResourceIndex@ index)
     defaultSampler: samplerInterpolated);
       
   // fabric
+  TextureImportSettings import_srmo_fabric;
+  import_srmo_fabric.format = TextureFormat::RGBA;
+  import_srmo_fabric.type = TextureType::UINT8;
+  import_srmo_fabric.red_channel_suffix = "_spec.tga";
+  import_srmo_fabric.merge_red_as_grey = true;
+  import_srmo_fabric.force_value.b = 1.0;
+  import_srmo_fabric.blue_channel_suffix = "_metallic.png";
+  import_srmo_fabric.merge_blue_as_grey = true;
+  import_srmo_fabric.force_value.a = 1.0;
+  index.convertTexture(textureFile: "sponza_fabric_red_color.texture", sourceFile: "textures/sponza_fabric_diff.tga", settings: import_diff);
+  index.convertTexture(textureFile: "sponza_fabric_green_color.texture", sourceFile: "textures/sponza_fabric_green_diff.tga", settings: import_diff);
+  index.convertTexture(textureFile: "sponza_fabric_blue_color.texture", sourceFile: "textures/sponza_fabric_blue_diff.tga", settings: import_diff);
+  index.convertTexture(textureFile: "sponza_fabric_srmo.texture", sourceFile: "textures/sponza_fabric_spec.tga", settings: import_srmo_fabric);
+  
+  TextureImportSettings import_srmo_curtain;
+  import_srmo_curtain = import_srmo_fabric;
+  import_srmo_curtain.red_channel_suffix = "_spec.png";
+  index.convertTexture(textureFile: "sponza_curtain_red_color.texture", sourceFile: "textures/sponza_curtain_diff.tga", settings: import_diff);
+  index.convertTexture(textureFile: "sponza_curtain_green_color.texture", sourceFile: "textures/sponza_curtain_green_diff.tga", settings: import_diff);
+  index.convertTexture(textureFile: "sponza_curtain_blue_color.texture", sourceFile: "textures/sponza_curtain_blue_diff.tga", settings: import_diff);
+  index.convertTexture(textureFile: "sponza_curtain_srmo.texture", sourceFile: "textures/sponza_curtain_spec.png", settings: import_srmo_curtain);
+  
+  index.registerTextureFile(uuid: uuids::sponza::textures::fabric_red_color, file: "sponza_fabric_red_color.texture", defaultSampler: samplerInterpolated);
+  index.registerTextureFile(uuid: uuids::sponza::textures::fabric_green_color, file: "sponza_fabric_green_color.texture", defaultSampler: samplerInterpolated);
+  index.registerTextureFile(uuid: uuids::sponza::textures::fabric_blue_color, file: "sponza_fabric_blue_color.texture", defaultSampler: samplerInterpolated);
+  index.registerTextureFile(uuid: uuids::sponza::textures::fabric_srmo, file: "sponza_fabric_srmo.texture", defaultSampler: samplerInterpolated);
+  
+  index.registerTextureFile(uuid: uuids::sponza::textures::curtain_red_color, file: "sponza_curtain_red_color.texture", defaultSampler: samplerInterpolated);
+  index.registerTextureFile(uuid: uuids::sponza::textures::curtain_green_color, file: "sponza_curtain_green_color.texture", defaultSampler: samplerInterpolated);
+  index.registerTextureFile(uuid: uuids::sponza::textures::curtain_blue_color, file: "sponza_curtain_blue_color.texture", defaultSampler: samplerInterpolated);
+  index.registerTextureFile(uuid: uuids::sponza::textures::curtain_srmo, file: "sponza_curtain_srmo.texture", defaultSampler: samplerInterpolated);
+  
   // leaf
   // lion_shield
   // lion
@@ -493,33 +525,44 @@ void registerMaterials(ResourceIndex@ index)
   index.registerMaterial(uuid: uuids::sponza::materials::vase_foliage,
                          material: vase_foliage_material);
   
-  TexturedMaterial fabric_a_material;
-  index.registerMaterial(uuid: uuids::sponza::materials::fabric_a,
-                         material: fabric_a_material);
+  TexturedMaterial fabric_red;
+  fabric_red.basecolor_map = TextureHandle(uuids::sponza::textures::fabric_red_color);
+  fabric_red.srmo_map = TextureHandle(uuids::sponza::textures::fabric_srmo);
+  fabric_red.srmo_range_0 = vec4(0.00, 0.5, 0, 0);
+  fabric_red.srmo_range_1 = vec4(0.80, 1.0, 1, 1); 
+  index.registerMaterial(uuid: uuids::sponza::materials::fabric_red,
+                         material: fabric_red);
   
-  TexturedMaterial fabric_b_material;
-  index.registerMaterial(uuid: uuids::sponza::materials::fabric_b,
-                         material: fabric_b_material);
+  TexturedMaterial fabric_green;
+  fabric_green = fabric_red;
+  fabric_green.basecolor_map = TextureHandle(uuids::sponza::textures::fabric_green_color);
+  index.registerMaterial(uuid: uuids::sponza::materials::fabric_green,
+                         material: fabric_green);
   
-  TexturedMaterial fabric_c_material;
-  index.registerMaterial(uuid: uuids::sponza::materials::fabric_c,
-                         material: fabric_c_material);
+  TexturedMaterial fabric_blue;
+  fabric_blue = fabric_red;
+  fabric_blue.basecolor_map = TextureHandle(uuids::sponza::textures::fabric_blue_color);
+  index.registerMaterial(uuid: uuids::sponza::materials::fabric_blue,
+                         material: fabric_blue);
   
-  TexturedMaterial fabric_d_material;
-  index.registerMaterial(uuid: uuids::sponza::materials::fabric_d,
-                         material: fabric_d_material);
+  TexturedMaterial curtain_red;
+  curtain_red = fabric_red;
+  curtain_red.basecolor_map = TextureHandle(uuids::sponza::textures::curtain_red_color);
+  curtain_red.srmo_map = TextureHandle(uuids::sponza::textures::curtain_srmo);
+  index.registerMaterial(uuid: uuids::sponza::materials::curtain_red,
+                         material: curtain_red);
   
-  TexturedMaterial fabric_e_material;
-  index.registerMaterial(uuid: uuids::sponza::materials::fabric_e,
-                         material: fabric_e_material);
-  
-  TexturedMaterial fabric_f_material;
-  index.registerMaterial(uuid: uuids::sponza::materials::fabric_f,
-                         material: fabric_f_material);
+  TexturedMaterial curtain_green;
+  curtain_green = curtain_red;
+  curtain_green.basecolor_map = TextureHandle(uuids::sponza::textures::curtain_green_color);
+  index.registerMaterial(uuid: uuids::sponza::materials::curtain_green,
+                         material: curtain_green);
                          
-  TexturedMaterial fabric_g_material;
-  index.registerMaterial(uuid: uuids::sponza::materials::fabric_g,
-                         material: fabric_g_material);
+  TexturedMaterial curtain_blue;
+  curtain_blue = curtain_red;
+  curtain_blue.basecolor_map = TextureHandle(uuids::sponza::textures::curtain_blue_color);
+  index.registerMaterial(uuid: uuids::sponza::materials::curtain_blue,
+                         material: curtain_blue);
   
   TexturedMaterial leaf_material;
   leaf_material.masked = true;
@@ -570,13 +613,12 @@ void registerScene(ResourceIndex@ index)
   importSettings.materialUuids['vase'] = uuids::sponza::materials::vase;
   importSettings.materialUuids['vase_round'] = uuids::sponza::materials::vase_round;
   importSettings.materialUuids['vase_foliage'] = uuids::sponza::materials::vase_foliage;
-  importSettings.materialUuids['fabric_a'] = uuids::sponza::materials::fabric_a;
-  importSettings.materialUuids['fabric_b'] = uuids::sponza::materials::fabric_b;
-  importSettings.materialUuids['fabric_c'] = uuids::sponza::materials::fabric_c;
-  importSettings.materialUuids['fabric_d'] = uuids::sponza::materials::fabric_d;
-  importSettings.materialUuids['fabric_e'] = uuids::sponza::materials::fabric_e;
-  importSettings.materialUuids['fabric_f'] = uuids::sponza::materials::fabric_f;
-  importSettings.materialUuids['fabric_g'] = uuids::sponza::materials::fabric_g;
+  importSettings.materialUuids['fabric_red'] = uuids::sponza::materials::fabric_red;
+  importSettings.materialUuids['fabric_green'] = uuids::sponza::materials::fabric_green;
+  importSettings.materialUuids['fabric_blue'] = uuids::sponza::materials::fabric_blue;
+  importSettings.materialUuids['curtain_red'] = uuids::sponza::materials::curtain_red;
+  importSettings.materialUuids['curtain_green'] = uuids::sponza::materials::curtain_green;
+  importSettings.materialUuids['curtain_blue'] = uuids::sponza::materials::curtain_blue;
   importSettings.materialUuids['leaf'] = uuids::sponza::materials::leaf;
   importSettings.materialUuids['lion_shield'] = uuids::sponza::materials::lion_shield;
   importSettings.materialUuids['lion'] = uuids::sponza::materials::lion;
@@ -599,13 +641,12 @@ void registerScene(ResourceIndex@ index)
   index.label[uuids::sponza::materials::vase] = 'vase';
   index.label[uuids::sponza::materials::vase_round] = 'vase_round';
   index.label[uuids::sponza::materials::vase_foliage] = 'vase_foliage';
-  index.label[uuids::sponza::materials::fabric_a] = 'fabric_a';
-  index.label[uuids::sponza::materials::fabric_b] = 'fabric_b';
-  index.label[uuids::sponza::materials::fabric_c] = 'fabric_c';
-  index.label[uuids::sponza::materials::fabric_d] = 'fabric_d';
-  index.label[uuids::sponza::materials::fabric_e] = 'fabric_e';
-  index.label[uuids::sponza::materials::fabric_f] = 'fabric_f';
-  index.label[uuids::sponza::materials::fabric_g] = 'fabric_g';
+  index.label[uuids::sponza::materials::fabric_red] = 'fabric_red';
+  index.label[uuids::sponza::materials::fabric_green] = 'fabric_green';
+  index.label[uuids::sponza::materials::fabric_blue] = 'fabric_blue';
+  index.label[uuids::sponza::materials::curtain_red] = 'curtain_red';
+  index.label[uuids::sponza::materials::curtain_green] = 'curtain_green';
+  index.label[uuids::sponza::materials::curtain_blue] = 'curtain_blue';
   index.label[uuids::sponza::materials::leaf] = 'leaf';
   index.label[uuids::sponza::materials::lion_shield] = 'lion_shield';
   index.label[uuids::sponza::materials::lion] = 'lion';

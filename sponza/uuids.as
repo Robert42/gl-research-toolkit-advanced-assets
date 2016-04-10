@@ -17,13 +17,12 @@ Uuid<Material> chain = Uuid<Material>("{fbfa5e27-d517-482d-a20e-f4e25f607947}");
 Uuid<Material> vase = Uuid<Material>("{ba590bf4-1c2b-4bb1-b0f4-77007e5504e0}");
 Uuid<Material> vase_round = Uuid<Material>("{6a4006a7-e8af-4cbd-938f-8919c93e6404}");
 Uuid<Material> vase_foliage = Uuid<Material>("{d8a3628d-9c80-4405-8d51-e315805915fb}");
-Uuid<Material> fabric_a = Uuid<Material>("{a400de07-6580-4ed1-91f9-3d14fb28b2db}");
-Uuid<Material> fabric_b = Uuid<Material>("{6d7dcb88-1ebd-41a4-9e1a-35902b8ceed1}");
-Uuid<Material> fabric_c = Uuid<Material>("{b12820fe-870c-4bf3-b810-e212f819ca50}");
-Uuid<Material> fabric_d = Uuid<Material>("{48595e79-c0c9-483e-ac16-71582a7dd4e3}");
-Uuid<Material> fabric_e = Uuid<Material>("{c95d1acc-8d80-49b0-8789-2d43eb950dca}");
-Uuid<Material> fabric_f = Uuid<Material>("{49b398fc-c679-45f2-9a38-a9f9e67c356e}");
-Uuid<Material> fabric_g = Uuid<Material>("{91aef746-1a99-4840-b09a-ead4c16623f2}");
+Uuid<Material> fabric_red = Uuid<Material>("{a400de07-6580-4ed1-91f9-3d14fb28b2db}");
+Uuid<Material> fabric_green = Uuid<Material>("{6d7dcb88-1ebd-41a4-9e1a-35902b8ceed1}");
+Uuid<Material> fabric_blue = Uuid<Material>("{b12820fe-870c-4bf3-b810-e212f819ca50}");
+Uuid<Material> curtain_red = Uuid<Material>("{48595e79-c0c9-483e-ac16-71582a7dd4e3}");
+Uuid<Material> curtain_green = Uuid<Material>("{c95d1acc-8d80-49b0-8789-2d43eb950dca}");
+Uuid<Material> curtain_blue = Uuid<Material>("{49b398fc-c679-45f2-9a38-a9f9e67c356e}");
 Uuid<Material> leaf = Uuid<Material>("{a367f8b7-872d-41dd-ae9f-978ac55c2f40}");
 Uuid<Material> lion_shield = Uuid<Material>("{1ced3017-0a0c-4f99-a3dc-12a7052304e0}");
 Uuid<Material> lion = Uuid<Material>("{7e332531-0611-40d3-a860-8bdad0f515a2}");
@@ -153,6 +152,16 @@ Uuid<Texture> lion_basic_color = Uuid<Texture>("{9e9a7bfd-b57d-4956-9f1b-8c1aae3
 Uuid<Texture> lion_n = Uuid<Texture>("{b64c924a-6f71-4e0c-9e2a-1ff2f622ebc2}");
 Uuid<Texture> lion_bump = Uuid<Texture>("{f6661dae-a957-493a-89e1-a5f2d174a267}");
 Uuid<Texture> lion_srmo = Uuid<Texture>("{c86e63e7-3c34-418a-8fba-660f3d12cd0b}");
+
+Uuid<Texture> fabric_red_color = Uuid<Texture>("{0348405c-a8c5-44f2-9a27-0c27a00cbfcd}");
+Uuid<Texture> fabric_green_color = Uuid<Texture>("{6f6efa7a-6c24-47b9-b92d-431d8de28386}");
+Uuid<Texture> fabric_blue_color = Uuid<Texture>("{7a5c59b6-d8f3-46b2-bcb1-f26d12b71920}");
+Uuid<Texture> fabric_srmo = Uuid<Texture>("{a34a4277-6b3e-42c8-a22b-ba9b1ff9de7b}");
+
+Uuid<Texture> curtain_red_color = Uuid<Texture>("{c4382180-f010-4c28-abc9-10bec7fb0769}");
+Uuid<Texture> curtain_green_color = Uuid<Texture>("{228566ef-dfd5-4549-bfab-cd45b17f50fd}");
+Uuid<Texture> curtain_blue_color = Uuid<Texture>("{818b0ad5-f163-4c0e-9c99-f8f25137f9ee}");
+Uuid<Texture> curtain_srmo = Uuid<Texture>("{98da94a7-85c3-4b17-97c6-c46bda5e008a}");
 
 } // namespace textures
 
