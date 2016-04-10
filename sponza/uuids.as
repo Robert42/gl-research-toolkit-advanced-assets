@@ -122,6 +122,11 @@ Uuid<Texture> vase_round_n = Uuid<Texture>("{de4ffa26-ef69-487c-87ad-01709f8255d
 Uuid<Texture> vase_round_bump = Uuid<Texture>("{92366498-e0c9-4187-b035-26611526262f}");
 Uuid<Texture> vase_round_srmo = Uuid<Texture>("{dd1042fb-401b-4f1b-8bdf-8180e487d7b2}");
 
+Uuid<Texture> vase_plant_basic_color = Uuid<Texture>("{9066f374-8f7b-4fb9-bb66-12b0df916393}");
+Uuid<Texture> vase_plant_n = Uuid<Texture>("{717d767f-58bf-4cc8-9890-92f0ce433e95}");
+Uuid<Texture> vase_plant_bump = Uuid<Texture>("{aa6f361e-1e36-4c3c-8c89-73508ab00bb6}");
+Uuid<Texture> vase_plant_srmo = Uuid<Texture>("{54f083ca-50d0-4d14-abb6-0391da859893}");
+
 Uuid<Texture> fabric_a_basic_color = Uuid<Texture>("{e2c02421-3f16-46a2-85de-a1c13a96e12c}");
 Uuid<Texture> fabric_b_basic_color = Uuid<Texture>("{8c4acef8-c4d5-46ce-a9fa-ce78ae6f963e}");
 Uuid<Texture> fabric_c_basic_color = Uuid<Texture>("{3f1886e3-67b1-481b-a610-7af38ad41d9f}");
