@@ -656,7 +656,9 @@ void registerMaterials(ResourceIndex@ index)
   
   
   TexturedMaterial material_test;
-  material_test.basecolor_map = TextureHandle(uuids::textures::fruit_plate_256x256);
+  material_test.masked = true;
+  material_test.two_sided = true;
+  material_test.basecolor_map = TextureHandle(uuids::textures::transparency_text);
   index.registerMaterial(uuid: uuids::sponza::materials::material_test,
                          material: material_test);
   
