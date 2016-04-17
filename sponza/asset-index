@@ -12,7 +12,7 @@ void registerTextures(ResourceIndex@ index)
   TextureImportSettings import_diff_with_mask;
   import_diff_with_mask.format = TextureFormat::RGBA;
   import_diff_with_mask.type = TextureType::INT8;
-  import_diff_with_mask.alpha_channel_suffix = "_mask.tga";
+  import_diff_with_mask.alpha_channel_suffix = "_mask.png";
   import_diff_with_mask.merge_alpha_as_grey = true;
   
   TextureImportSettings import_bump;
@@ -26,7 +26,7 @@ void registerTextures(ResourceIndex@ index)
   import_srmo_from_spec.force_value.g = 0.5;
   import_srmo_from_spec.force_value.b = 0.0;
   import_srmo_from_spec.force_value.a = 1.0;
-  import_srmo_from_spec.red_channel_suffix = "_spec.tga";
+  import_srmo_from_spec.red_channel_suffix = "_spec.png";
   import_srmo_from_spec.merge_red_as_grey = true;
   
   TextureImportSettings import_srmo_from_spec_and_ao;
@@ -37,7 +37,7 @@ void registerTextures(ResourceIndex@ index)
   
   TextureImportSettings import_srmo_from_spec_ref_and_ao;
   import_srmo_from_spec_ref_and_ao = import_srmo_from_spec_and_ao;
-  import_srmo_from_spec_ref_and_ao.green_channel_suffix = "_ref.tga";
+  import_srmo_from_spec_ref_and_ao.green_channel_suffix = "_ref.png";
   import_srmo_from_spec_ref_and_ao.force_value.g = import_srmo_from_spec_and_ao.force_value.r;
   import_srmo_from_spec_ref_and_ao.merge_green_as_grey;
   
@@ -46,7 +46,7 @@ void registerTextures(ResourceIndex@ index)
   import_srmo_from_spec_and_metal.type = TextureType::UINT8;
   import_srmo_from_spec_and_metal.force_value.g = 0.5;
   import_srmo_from_spec_and_metal.force_value.a = 1.0;
-  import_srmo_from_spec_and_metal.red_channel_suffix = "_spec.tga";
+  import_srmo_from_spec_and_metal.red_channel_suffix = "_spec.png";
   import_srmo_from_spec_and_metal.blue_channel_suffix = "_metal.png";
   import_srmo_from_spec_and_metal.merge_red_as_grey = true;
   import_srmo_from_spec_and_metal.merge_blue_as_grey = true;
@@ -54,10 +54,10 @@ void registerTextures(ResourceIndex@ index)
   TextureImportSettings import_srmo_from_spec_as_metal;
   import_srmo_from_spec_as_metal.format = TextureFormat::RGBA;
   import_srmo_from_spec_as_metal.type = TextureType::UINT8;
-    import_srmo_from_spec_as_metal.red_channel_suffix = "_spec.tga";
+    import_srmo_from_spec_as_metal.red_channel_suffix = "_spec.png";
     import_srmo_from_spec_as_metal.merge_red_as_grey = true;
   import_srmo_from_spec_as_metal.force_value.g = 0.5;
-    import_srmo_from_spec_as_metal.blue_channel_suffix = "_spec.tga";
+    import_srmo_from_spec_as_metal.blue_channel_suffix = "_spec.png";
     import_srmo_from_spec_as_metal.merge_blue_as_grey = true;
   import_srmo_from_spec_as_metal.force_value.a = 1.0;
   
@@ -72,10 +72,10 @@ void registerTextures(ResourceIndex@ index)
   import_n_inverted.factor.y = -1;
                             
   // spnza_details
-  index.convertTexture(textureFile: "spnza_details_diff.texture", sourceFile: "textures/sponza_details_diff.tga", settings: import_diff);
-  //index.convertTexture(textureFile: "spnza_details_n.texture", sourceFile: "textures/sponza_details_ddn.tga", settings: import_n);
+  index.convertTexture(textureFile: "spnza_details_diff.texture", sourceFile: "textures/sponza_details_diff.png", settings: import_diff);
+  //index.convertTexture(textureFile: "spnza_details_n.texture", sourceFile: "textures/sponza_details_ddn.png", settings: import_n);
   //index.convertTexture(textureFile: "spnza_details_bump.texture", sourceFile: "textures/sponza_details_bump.png", settings: import_bump);
-  index.convertTexture(textureFile: "spnza_details_srmo.texture", sourceFile: "textures/sponza_details_diff.tga", settings: import_srmo_from_spec_and_metal);
+  index.convertTexture(textureFile: "spnza_details_srmo.texture", sourceFile: "textures/sponza_details_diff.png", settings: import_srmo_from_spec_and_metal);
   index.registerTextureFile(uuid: uuids::sponza::textures::spnza_details_basic_color,
                             file: "spnza_details_diff.texture",
                             defaultSampler: samplerInterpolated);
@@ -90,10 +90,10 @@ void registerTextures(ResourceIndex@ index)
                             defaultSampler: samplerInterpolated);
                             
   // spnza_bricks
-  index.convertTexture(textureFile: "spnza_bricks_a_diff.texture", sourceFile: "textures/spnza_bricks_a_diff.tga", settings: import_diff);
-  index.convertTexture(textureFile: "spnza_bricks_a_n.texture", sourceFile: "textures/spnza_bricks_a_ddn.tga", settings: import_n);
+  index.convertTexture(textureFile: "spnza_bricks_a_diff.texture", sourceFile: "textures/spnza_bricks_a_diff.png", settings: import_diff);
+  index.convertTexture(textureFile: "spnza_bricks_a_n.texture", sourceFile: "textures/spnza_bricks_a_ddn.png", settings: import_n);
   index.convertTexture(textureFile: "spnza_bricks_a_bump.texture", sourceFile: "textures/spnza_bricks_a_bump.png", settings: import_bump);
-  index.convertTexture(textureFile: "spnza_bricks_a_srmo.texture", sourceFile: "textures/spnza_bricks_a_diff.tga", settings: import_srmo_from_spec_and_ao);
+  index.convertTexture(textureFile: "spnza_bricks_a_srmo.texture", sourceFile: "textures/spnza_bricks_a_diff.png", settings: import_srmo_from_spec_and_ao);
   index.registerTextureFile(uuid: uuids::sponza::textures::spnza_bricks_a_basic_color,
                             file: "spnza_bricks_a_diff.texture",
                             defaultSampler: samplerInterpolated);
@@ -109,10 +109,10 @@ void registerTextures(ResourceIndex@ index)
                             
                             
   // sponza_column_a
-  index.convertTexture(textureFile: "sponza_column_a_diff.texture", sourceFile: "textures/sponza_column_a_diff.tga", settings: import_diff);   
-  index.convertTexture(textureFile: "sponza_column_a_n.texture", sourceFile: "textures/sponza_column_a_ddn.tga", settings: import_n);
+  index.convertTexture(textureFile: "sponza_column_a_diff.texture", sourceFile: "textures/sponza_column_a_diff.png", settings: import_diff);   
+  index.convertTexture(textureFile: "sponza_column_a_n.texture", sourceFile: "textures/sponza_column_a_ddn.png", settings: import_n);
   index.convertTexture(textureFile: "sponza_column_a_bump.texture", sourceFile: "textures/sponza_column_a_bump.png", settings: import_bump);
-  index.convertTexture(textureFile: "sponza_column_a_srmo.texture", sourceFile: "textures/sponza_column_a_diff.tga", settings: import_srmo_from_spec_and_ao);
+  index.convertTexture(textureFile: "sponza_column_a_srmo.texture", sourceFile: "textures/sponza_column_a_diff.png", settings: import_srmo_from_spec_and_ao);
   index.registerTextureFile(uuid: uuids::sponza::textures::sponza_column_a_basic_color,
                             file: "sponza_column_a_diff.texture",
                             defaultSampler: samplerInterpolated);
@@ -127,10 +127,10 @@ void registerTextures(ResourceIndex@ index)
                             defaultSampler: samplerInterpolated);
     
   // sponza_column_b
-  index.convertTexture(textureFile: "sponza_column_b_diff.texture", sourceFile: "textures/sponza_column_b_diff.tga", settings: import_diff);   
-  index.convertTexture(textureFile: "sponza_column_b_n.texture", sourceFile: "textures/sponza_column_b_ddn.tga", settings: import_n);
+  index.convertTexture(textureFile: "sponza_column_b_diff.texture", sourceFile: "textures/sponza_column_b_diff.png", settings: import_diff);   
+  index.convertTexture(textureFile: "sponza_column_b_n.texture", sourceFile: "textures/sponza_column_b_ddn.png", settings: import_n);
   index.convertTexture(textureFile: "sponza_column_b_bump.texture", sourceFile: "textures/sponza_column_b_bump.png", settings: import_bump);
-  index.convertTexture(textureFile: "sponza_column_b_srmo.texture", sourceFile: "textures/sponza_column_b_diff.tga", settings: import_srmo_from_spec_and_ao);
+  index.convertTexture(textureFile: "sponza_column_b_srmo.texture", sourceFile: "textures/sponza_column_b_diff.png", settings: import_srmo_from_spec_and_ao);
   index.registerTextureFile(uuid: uuids::sponza::textures::sponza_column_b_basic_color,
                             file: "sponza_column_b_diff.texture",
                             defaultSampler: samplerInterpolated);
@@ -145,10 +145,10 @@ void registerTextures(ResourceIndex@ index)
                             defaultSampler: samplerInterpolated);
     
   // sponza_column_c
-  index.convertTexture(textureFile: "sponza_column_c_diff.texture", sourceFile: "textures/sponza_column_c_diff.tga", settings: import_diff);   
-  index.convertTexture(textureFile: "sponza_column_c_n.texture", sourceFile: "textures/sponza_column_c_ddn.tga", settings: import_n);
+  index.convertTexture(textureFile: "sponza_column_c_diff.texture", sourceFile: "textures/sponza_column_c_diff.png", settings: import_diff);   
+  index.convertTexture(textureFile: "sponza_column_c_n.texture", sourceFile: "textures/sponza_column_c_ddn.png", settings: import_n);
   index.convertTexture(textureFile: "sponza_column_c_bump.texture", sourceFile: "textures/sponza_column_c_bump.png", settings: import_bump);
-  index.convertTexture(textureFile: "sponza_column_c_srmo.texture", sourceFile: "textures/sponza_column_c_diff.tga", settings: import_srmo_from_spec_and_ao);
+  index.convertTexture(textureFile: "sponza_column_c_srmo.texture", sourceFile: "textures/sponza_column_c_diff.png", settings: import_srmo_from_spec_and_ao);
   index.registerTextureFile(uuid: uuids::sponza::textures::sponza_column_c_basic_color,
                             file: "sponza_column_c_diff.texture",
                             defaultSampler: samplerInterpolated);
@@ -167,10 +167,10 @@ void registerTextures(ResourceIndex@ index)
   import_ceiling_bump = import_bump;
   import_ceiling_bump.remapSourceAsSigned = false;
   import_ceiling_bump.offset = vec4(-1);
-  index.convertTexture(textureFile: "sponza_ceiling_a_diff.texture", sourceFile: "textures/sponza_ceiling_a_diff.tga", settings: import_diff);   
+  index.convertTexture(textureFile: "sponza_ceiling_a_diff.texture", sourceFile: "textures/sponza_ceiling_a_diff.png", settings: import_diff);   
   index.convertTexture(textureFile: "sponza_ceiling_a_n.texture", sourceFile: "textures/sponza_ceiling_a_n.png", settings: import_n);
   index.convertTexture(textureFile: "sponza_ceiling_a_bump.texture", sourceFile: "textures/sponza_ceiling_a_bump.png", settings: import_ceiling_bump);
-  index.convertTexture(textureFile: "sponza_ceiling_a_srmo.texture", sourceFile: "textures/sponza_ceiling_a_diff.tga", settings: import_srmo_from_spec_and_ao);
+  index.convertTexture(textureFile: "sponza_ceiling_a_srmo.texture", sourceFile: "textures/sponza_ceiling_a_diff.png", settings: import_srmo_from_spec_and_ao);
   index.registerTextureFile(uuid: uuids::sponza::textures::sponza_ceiling_a_basic_color,
                             file: "sponza_ceiling_a_diff.texture",
                             defaultSampler: samplerInterpolated);
@@ -185,10 +185,10 @@ void registerTextures(ResourceIndex@ index)
                             defaultSampler: samplerInterpolated);
                             
   // sponza_arch
-  index.convertTexture(textureFile: "sponza_arch_diff.texture", sourceFile: "textures/sponza_arch_diff.tga", settings: import_diff);   
-  index.convertTexture(textureFile: "sponza_arch_n.texture", sourceFile: "textures/sponza_arch_ddn.tga", settings: import_n);
+  index.convertTexture(textureFile: "sponza_arch_diff.texture", sourceFile: "textures/sponza_arch_diff.png", settings: import_diff);   
+  index.convertTexture(textureFile: "sponza_arch_n.texture", sourceFile: "textures/sponza_arch_ddn.png", settings: import_n);
   index.convertTexture(textureFile: "sponza_arch_bump.texture", sourceFile: "textures/sponza_arch_bump.png", settings: import_bump);
-  index.convertTexture(textureFile: "sponza_arch_srmo.texture", sourceFile: "textures/sponza_arch_diff.tga", settings: import_srmo_from_spec_and_ao);
+  index.convertTexture(textureFile: "sponza_arch_srmo.texture", sourceFile: "textures/sponza_arch_diff.png", settings: import_srmo_from_spec_and_ao);
   index.registerTextureFile(uuid: uuids::sponza::textures::sponza_arch_basic_color,
                             file: "sponza_arch_diff.texture",
                             defaultSampler: samplerInterpolated);
@@ -203,10 +203,10 @@ void registerTextures(ResourceIndex@ index)
                             defaultSampler: samplerInterpolated);
                             
   // sponza_roof
-  index.convertTexture(textureFile: "sponza_roof_diff.texture", sourceFile: "textures/sponza_roof_diff.tga", settings: import_diff);   
-  //index.convertTexture(textureFile: "sponza_roof_n.texture", sourceFile: "textures/sponza_roof_ddn.tga", settings: import_n);
+  index.convertTexture(textureFile: "sponza_roof_diff.texture", sourceFile: "textures/sponza_roof_diff.png", settings: import_diff);   
+  //index.convertTexture(textureFile: "sponza_roof_n.texture", sourceFile: "textures/sponza_roof_ddn.png", settings: import_n);
   //index.convertTexture(textureFile: "sponza_roof_bump.texture", sourceFile: "textures/sponza_roof_bump.png", settings: import_bump);
-  //index.convertTexture(textureFile: "sponza_roof_srmo.texture", sourceFile: "textures/sponza_roof_diff.tga", settings: import_srmo_from_spec_and_ao);
+  //index.convertTexture(textureFile: "sponza_roof_srmo.texture", sourceFile: "textures/sponza_roof_diff.png", settings: import_srmo_from_spec_and_ao);
   index.registerTextureFile(uuid: uuids::sponza::textures::sponza_roof_basic_color,
                             file: "sponza_roof_diff.texture",
                             defaultSampler: samplerInterpolated);
@@ -221,10 +221,10 @@ void registerTextures(ResourceIndex@ index)
   //                          defaultSampler: samplerInterpolated);
   
   // sponza_floor_a
-  index.convertTexture(textureFile: "sponza_floor_a_diff.texture", sourceFile: "textures/sponza_floor_a_diff.tga", settings: import_diff);   
+  index.convertTexture(textureFile: "sponza_floor_a_diff.texture", sourceFile: "textures/sponza_floor_a_diff.png", settings: import_diff);   
   index.convertTexture(textureFile: "sponza_floor_a_n.texture", sourceFile: "textures/sponza_floor_a_n.png", settings: import_n);
   index.convertTexture(textureFile: "sponza_floor_a_bump.texture", sourceFile: "textures/sponza_floor_a_bump.png", settings: import_bump);
-  index.convertTexture(textureFile: "sponza_floor_a_srmo.texture", sourceFile: "textures/sponza_floor_a_diff.tga", settings: import_srmo_from_spec_and_ao);
+  index.convertTexture(textureFile: "sponza_floor_a_srmo.texture", sourceFile: "textures/sponza_floor_a_diff.png", settings: import_srmo_from_spec_and_ao);
   index.registerTextureFile(uuid: uuids::sponza::textures::sponza_floor_a_basic_color,
                             file: "sponza_floor_a_diff.texture",
                             defaultSampler: samplerInterpolated);
@@ -239,10 +239,10 @@ void registerTextures(ResourceIndex@ index)
                             defaultSampler: samplerInterpolated);
                             
   // sponza_flagpole
-  index.convertTexture(textureFile: "sponza_flagpole_diff.texture", sourceFile: "textures/sponza_flagpole_diff.tga", settings: import_diff);   
-  //index.convertTexture(textureFile: "sponza_flagpole_n.texture", sourceFile: "textures/sponza_flagpole_ddn.tga", settings: import_n);
+  index.convertTexture(textureFile: "sponza_flagpole_diff.texture", sourceFile: "textures/sponza_flagpole_diff.png", settings: import_diff);   
+  //index.convertTexture(textureFile: "sponza_flagpole_n.texture", sourceFile: "textures/sponza_flagpole_ddn.png", settings: import_n);
   //index.convertTexture(textureFile: "sponza_flagpole_bump.texture", sourceFile: "textures/sponza_flagpole_bump.png", settings: import_bump);
-  index.convertTexture(textureFile: "sponza_flagpole_srmo.texture", sourceFile: "textures/sponza_flagpole_diff.tga", settings: import_srmo_from_spec_as_metal);
+  index.convertTexture(textureFile: "sponza_flagpole_srmo.texture", sourceFile: "textures/sponza_flagpole_diff.png", settings: import_srmo_from_spec_as_metal);
   index.registerTextureFile(uuid: uuids::sponza::textures::sponza_flagpole_basic_color,
                             file: "sponza_flagpole_diff.texture",
                             defaultSampler: samplerInterpolated);
@@ -257,16 +257,16 @@ void registerTextures(ResourceIndex@ index)
                             defaultSampler: samplerInterpolated);
             
   // vase_hanging
-  index.convertTexture(textureFile: "vase_hanging_diff.texture", sourceFile: "textures/vase_hanging.tga", settings: import_diff);
+  index.convertTexture(textureFile: "vase_hanging_diff.texture", sourceFile: "textures/vase_hanging.png", settings: import_diff);
   index.registerTextureFile(uuid: uuids::sponza::textures::vase_hanging_basic_color,
                             file: "vase_hanging_diff.texture",
                             defaultSampler: samplerInterpolated);
   
   // chain
-  index.convertTexture(textureFile: "chain_diff.texture", sourceFile: "textures/chain_texture_diff.tga", settings: import_diff_with_mask);   
-  index.convertTexture(textureFile: "chain_n.texture", sourceFile: "textures/chain_texture_ddn.tga", settings: import_n);
+  index.convertTexture(textureFile: "chain_diff.texture", sourceFile: "textures/chain_texture_diff.png", settings: import_diff_with_mask);   
+  index.convertTexture(textureFile: "chain_n.texture", sourceFile: "textures/chain_texture_ddn.png", settings: import_n);
   index.convertTexture(textureFile: "chain_bump.texture", sourceFile: "textures/chain_texture_bump.png", settings: import_bump);
-  index.convertTexture(textureFile: "chain_srmo.texture", sourceFile: "textures/chain_texture_diff.tga", settings: import_srmo_from_spec_ref_and_ao);
+  index.convertTexture(textureFile: "chain_srmo.texture", sourceFile: "textures/chain_texture_diff.png", settings: import_srmo_from_spec_ref_and_ao);
   index.registerTextureFile(uuid: uuids::sponza::textures::chain_basic_color,
     file: "chain_diff.texture",
     defaultSampler: samplerInterpolated);
@@ -282,10 +282,10 @@ void registerTextures(ResourceIndex@ index)
     
 
   // vase
-  index.convertTexture(textureFile: "vase_diff.texture", sourceFile: "textures/vase_diff.tga", settings: import_diff);   
-  index.convertTexture(textureFile: "vase_n.texture", sourceFile: "textures/vase_ddn.tga", settings: import_n);
+  index.convertTexture(textureFile: "vase_diff.texture", sourceFile: "textures/vase_diff.png", settings: import_diff);   
+  index.convertTexture(textureFile: "vase_n.texture", sourceFile: "textures/vase_ddn.png", settings: import_n);
   index.convertTexture(textureFile: "vase_bump.texture", sourceFile: "textures/vase_bump.png", settings: import_bump);
-  index.convertTexture(textureFile: "vase_srmo.texture", sourceFile: "textures/vase_diff.tga", settings: import_srmo_from_spec_and_ao);
+  index.convertTexture(textureFile: "vase_srmo.texture", sourceFile: "textures/vase_diff.png", settings: import_srmo_from_spec_and_ao);
   index.registerTextureFile(uuid: uuids::sponza::textures::vase_basic_color,
       file: "vase_diff.texture",
       defaultSampler: samplerInterpolated);
@@ -301,10 +301,10 @@ void registerTextures(ResourceIndex@ index)
       
 
   // vase_round
-  index.convertTexture(textureFile: "vase_round_diff.texture", sourceFile: "textures/vase_round_diff.tga", settings: import_diff);   
-  index.convertTexture(textureFile: "vase_round_n.texture", sourceFile: "textures/vase_round_ddn.tga", settings: import_n);
+  index.convertTexture(textureFile: "vase_round_diff.texture", sourceFile: "textures/vase_round_diff.png", settings: import_diff);   
+  index.convertTexture(textureFile: "vase_round_n.texture", sourceFile: "textures/vase_round_ddn.png", settings: import_n);
   index.convertTexture(textureFile: "vase_round_bump.texture", sourceFile: "textures/vase_round_bump.png", settings: import_bump);
-  index.convertTexture(textureFile: "vase_round_srmo.texture", sourceFile: "textures/vase_round_diff.tga", settings: import_srmo_from_spec_and_ao);
+  index.convertTexture(textureFile: "vase_round_srmo.texture", sourceFile: "textures/vase_round_diff.png", settings: import_srmo_from_spec_and_ao);
   index.registerTextureFile(uuid: uuids::sponza::textures::vase_round_basic_color,
       file: "vase_round_diff.texture",
       defaultSampler: samplerInterpolated);
@@ -319,10 +319,10 @@ void registerTextures(ResourceIndex@ index)
       defaultSampler: samplerInterpolated);
 
   // vase_foliage
-  index.convertTexture(textureFile: "vase_plant_diff.texture", sourceFile: "textures/vase_plant_diff.tga", settings: import_diff_with_mask);   
-  //index.convertTexture(textureFile: "vase_plant_n.texture", sourceFile: "textures/vase_plant_diff.tga", settings: import_n);
+  index.convertTexture(textureFile: "vase_plant_diff.texture", sourceFile: "textures/vase_plant_diff.png", settings: import_diff_with_mask);   
+  //index.convertTexture(textureFile: "vase_plant_n.texture", sourceFile: "textures/vase_plant_diff.png", settings: import_n);
   //index.convertTexture(textureFile: "vase_plant_bump.texture", sourceFile: "textures/vase_plant_diff.png", settings: import_bump);
-  index.convertTexture(textureFile: "vase_plant_srmo.texture", sourceFile: "textures/vase_plant_diff.tga", settings: import_srmo_from_spec);
+  index.convertTexture(textureFile: "vase_plant_srmo.texture", sourceFile: "textures/vase_plant_diff.png", settings: import_srmo_from_spec);
   index.registerTextureFile(uuid: uuids::sponza::textures::vase_plant_basic_color,
     file: "vase_plant_diff.texture",
     defaultSampler: samplerInterpolated);
@@ -340,23 +340,23 @@ void registerTextures(ResourceIndex@ index)
   TextureImportSettings import_srmo_fabric;
   import_srmo_fabric.format = TextureFormat::RGBA;
   import_srmo_fabric.type = TextureType::UINT8;
-  import_srmo_fabric.red_channel_suffix = "_spec.tga";
+  import_srmo_fabric.red_channel_suffix = "_spec.png";
   import_srmo_fabric.merge_red_as_grey = true;
   import_srmo_fabric.force_value.g = 0.5;
   import_srmo_fabric.blue_channel_suffix = "_metallic.png";
   import_srmo_fabric.merge_blue_as_grey = true;
   import_srmo_fabric.force_value.a = 1.0;
-  index.convertTexture(textureFile: "sponza_fabric_red_color.texture", sourceFile: "textures/sponza_fabric_diff.tga", settings: import_diff);
-  index.convertTexture(textureFile: "sponza_fabric_green_color.texture", sourceFile: "textures/sponza_fabric_green_diff.tga", settings: import_diff);
-  index.convertTexture(textureFile: "sponza_fabric_blue_color.texture", sourceFile: "textures/sponza_fabric_blue_diff.tga", settings: import_diff);
-  index.convertTexture(textureFile: "sponza_fabric_srmo.texture", sourceFile: "textures/sponza_fabric_spec.tga", settings: import_srmo_fabric);
+  index.convertTexture(textureFile: "sponza_fabric_red_color.texture", sourceFile: "textures/sponza_fabric_diff.png", settings: import_diff);
+  index.convertTexture(textureFile: "sponza_fabric_green_color.texture", sourceFile: "textures/sponza_fabric_green_diff.png", settings: import_diff);
+  index.convertTexture(textureFile: "sponza_fabric_blue_color.texture", sourceFile: "textures/sponza_fabric_blue_diff.png", settings: import_diff);
+  index.convertTexture(textureFile: "sponza_fabric_srmo.texture", sourceFile: "textures/sponza_fabric_spec.png", settings: import_srmo_fabric);
   
   TextureImportSettings import_srmo_curtain;
   import_srmo_curtain = import_srmo_fabric;
   import_srmo_curtain.red_channel_suffix = "_spec.png";
-  index.convertTexture(textureFile: "sponza_curtain_red_color.texture", sourceFile: "textures/sponza_curtain_diff.tga", settings: import_diff);
-  index.convertTexture(textureFile: "sponza_curtain_green_color.texture", sourceFile: "textures/sponza_curtain_green_diff.tga", settings: import_diff);
-  index.convertTexture(textureFile: "sponza_curtain_blue_color.texture", sourceFile: "textures/sponza_curtain_blue_diff.tga", settings: import_diff);
+  index.convertTexture(textureFile: "sponza_curtain_red_color.texture", sourceFile: "textures/sponza_curtain_diff.png", settings: import_diff);
+  index.convertTexture(textureFile: "sponza_curtain_green_color.texture", sourceFile: "textures/sponza_curtain_green_diff.png", settings: import_diff);
+  index.convertTexture(textureFile: "sponza_curtain_blue_color.texture", sourceFile: "textures/sponza_curtain_blue_diff.png", settings: import_diff);
   index.convertTexture(textureFile: "sponza_curtain_srmo.texture", sourceFile: "textures/sponza_curtain_spec.png", settings: import_srmo_curtain);
   
   index.registerTextureFile(uuid: uuids::sponza::textures::fabric_red_color, file: "sponza_fabric_red_color.texture", defaultSampler: samplerInterpolated);
@@ -370,10 +370,10 @@ void registerTextures(ResourceIndex@ index)
   index.registerTextureFile(uuid: uuids::sponza::textures::curtain_srmo, file: "sponza_curtain_srmo.texture", defaultSampler: samplerInterpolated);
   
   // leaf
-  index.convertTexture(textureFile: "thorn_basic_color.texture", sourceFile: "textures/sponza_thorn_diff.tga", settings: import_diff_with_mask);   
-  index.convertTexture(textureFile: "thorn_ddn.texture", sourceFile: "textures/sponza_thorn_ddn.tga", settings: import_n);
+  index.convertTexture(textureFile: "thorn_basic_color.texture", sourceFile: "textures/sponza_thorn_diff.png", settings: import_diff_with_mask);   
+  index.convertTexture(textureFile: "thorn_ddn.texture", sourceFile: "textures/sponza_thorn_ddn.png", settings: import_n);
   index.convertTexture(textureFile: "thorn_bump.texture", sourceFile: "textures/sponza_thorn_bump.png", settings: import_bump);
-  index.convertTexture(textureFile: "thorn_srmo.texture", sourceFile: "textures/sponza_thorn_diff.tga", settings: import_srmo_from_spec_and_ao);
+  index.convertTexture(textureFile: "thorn_srmo.texture", sourceFile: "textures/sponza_thorn_diff.png", settings: import_srmo_from_spec_and_ao);
   index.registerTextureFile(uuid: uuids::sponza::textures::leaf_basic_color,
       file: "thorn_basic_color.texture",
       defaultSampler: samplerInterpolated);
@@ -388,10 +388,10 @@ void registerTextures(ResourceIndex@ index)
       defaultSampler: samplerInterpolated);
       
   // lion_shield
-  index.convertTexture(textureFile: "lion_diff.texture", sourceFile: "textures/lion_diff.tga", settings: import_diff);   
-  index.convertTexture(textureFile: "lion_n.texture", sourceFile: "textures/lion_ddn.tga", settings: import_n);
+  index.convertTexture(textureFile: "lion_diff.texture", sourceFile: "textures/lion_diff.png", settings: import_diff);   
+  index.convertTexture(textureFile: "lion_n.texture", sourceFile: "textures/lion_ddn.png", settings: import_n);
   index.convertTexture(textureFile: "lion_bump.texture", sourceFile: "textures/lion_bump.png", settings: import_bump);
-  index.convertTexture(textureFile: "lion_srmo.texture", sourceFile: "textures/lion_diff.tga", settings: import_srmo_from_spec_and_ao);
+  index.convertTexture(textureFile: "lion_srmo.texture", sourceFile: "textures/lion_diff.png", settings: import_srmo_from_spec_and_ao);
   index.registerTextureFile(uuid: uuids::sponza::textures::lion_basic_color,
       file: "lion_diff.texture",
       defaultSampler: samplerInterpolated);
@@ -406,10 +406,10 @@ void registerTextures(ResourceIndex@ index)
       defaultSampler: samplerInterpolated);
       
   // lion
-  index.convertTexture(textureFile: "lion_shield_diff.texture", sourceFile: "textures/lion_shield_diff.tga", settings: import_diff);   
-  index.convertTexture(textureFile: "lion_shield_n.texture", sourceFile: "textures/lion_shield_ddn.tga", settings: import_n);
+  index.convertTexture(textureFile: "lion_shield_diff.texture", sourceFile: "textures/lion_shield_diff.png", settings: import_diff);   
+  index.convertTexture(textureFile: "lion_shield_n.texture", sourceFile: "textures/lion_shield_ddn.png", settings: import_n);
   index.convertTexture(textureFile: "lion_shield_bump.texture", sourceFile: "textures/lion_shield_bump.png", settings: import_bump);
-  index.convertTexture(textureFile: "lion_shield_srmo.texture", sourceFile: "textures/lion_shield_diff.tga", settings: import_srmo_from_spec_and_ao);
+  index.convertTexture(textureFile: "lion_shield_srmo.texture", sourceFile: "textures/lion_shield_diff.png", settings: import_srmo_from_spec_and_ao);
   index.registerTextureFile(uuid: uuids::sponza::textures::lion_shield_basic_color,
       file: "lion_shield_diff.texture",
       defaultSampler: samplerInterpolated);
