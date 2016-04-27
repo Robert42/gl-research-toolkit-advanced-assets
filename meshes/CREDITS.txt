@@ -1,0 +1,36 @@
+# bunny.blend & bunny_imported.blend
+
+[© Stanford University](http://graphics.stanford.edu/data/3Dscanrep/)
+
+This model was originally scanned by the Stanford University Computer Graphics
+Laboratory (see their [website](http://graphics.stanford.edu/data/3Dscanrep/) for
+more information about the scan process).
+
+2016-04-27, Robert Hildebrandt imported the bunny model from bun_zipper.ply into
+the Blender file bunny.blend, transformed it to the blender coordinate system,
+filled the hole, retopologized the mesh and created a simple uvmap.
+
+Original copyright notes:
+
+> 		       Surface Reconstructions
+>
+>		      Stanford Range Repository
+>		     Computer Graphics Laboratory
+>			 Stanford University
+>
+>			    August 4, 1996
+>
+>
+>These files are the result of reconstructing a set of range images
+>using the "zipper" program.  The first file is the high resolution
+>result, while the "_res*" files are decimated versions.  Note that
+>these decimations were performed using a crude algorithm that does not
+>necessarily preserve mesh topology.  While they are not beautiful,
+>they are suitable for interactive rendering.
+>
+>For more information, consult the web pages of the Stanford Graphics
+>Laboratory:
+>
+>	http://www-graphics.stanford.edu
+>
+

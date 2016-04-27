@@ -1,0 +1,11 @@
+#include "uuids.as"
+
+void main(ResourceIndex@ index)
+{
+  index.convertStaticMesh(meshFile: "bunny.mesh", sourceFile: "bunny.blend", groupToImport: "bunny");
+
+  index.registerStaticMesh(uuids::meshes::bunny, file: "bunny.mesh");
+  
+  Voxelizer voxelizer = index.defaultVoxelizer;
+  voxelizer.voxelize(uuids::meshes::bunny);
+}
