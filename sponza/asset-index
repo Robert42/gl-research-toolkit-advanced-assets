@@ -670,6 +670,9 @@ void registerScene(ResourceIndex@ index)
 {
   SceneGraphImportSettings importSettings;
   
+  array<string> twoSidedMeshes = {"sponza-lamp-mounting"};
+  importSettings.meshesToVoxelizeTwoSided = twoSidedMeshes;
+  
   importSettings.materialUuids['details'] = uuids::sponza::materials::details;
   importSettings.materialUuids['bricks'] = uuids::sponza::materials::bricks;
   importSettings.materialUuids['column_a'] = uuids::sponza::materials::column_a;
