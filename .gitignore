@@ -1,5 +1,5 @@
 *.blend1
 *.blend2
 *.scene-graph
-*.scene-graph.mesh
+*.scene-graph.asset-index
 *.voxel-metadata
