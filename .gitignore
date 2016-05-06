@@ -2,4 +2,4 @@
 *.blend2
 *.scene-graph
 *.scene-graph.mesh
-
+*.voxel-metadata
