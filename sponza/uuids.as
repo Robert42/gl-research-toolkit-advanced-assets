@@ -43,6 +43,7 @@ Uuid<SceneLayer> sponza_material_debugging = Uuid<SceneLayer>("{9fd6782c-f6af-42
 
 namespace scenes {
 Uuid<Scene> sponza_full = Uuid<Scene>("{33702970-a9f9-4e7d-8441-2f363e19dad6}");
+Uuid<Scene> sponza_no_foliage = Uuid<Scene>("{b5b3c0be-99b2-43b9-983a-6cb8bb3c7dd3}");
 } // namespace scenes
 
 namespace cameras {
