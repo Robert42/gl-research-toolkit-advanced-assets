@@ -670,8 +670,32 @@ void registerScene(ResourceIndex@ index)
 {
   SceneGraphImportSettings importSettings;
   
-  array<string> twoSidedMeshes = {"sponza-lamp-mounting"};
+  array<string> twoSidedMeshes = {"sponza\\-lamp\\-mounting",
+                                  "sponza\\-upper\\-wall$"};
   importSettings.meshesToVoxelizeTwoSided = twoSidedMeshes;
+  
+  array<string> meshesToVoxelize_empty = {};
+  array<string> meshesToVoxelize_all = {".*"};
+  importSettings.meshesToVoxelize = meshesToVoxelize_all;
+  
+  array<string> meshesToMergeWhenVoxelizing = {".*roof.*\n"
+                                               ".*seperator.*\n"
+                                               ".*ceiling.*\n"
+                                               ".*floor.*\n"
+                                               ".*arch\\-balcony.*\n"
+                                               ".*ground.*\n"
+                                               ".*armrest.*\n"
+                                               "sponza\\-arch\\-lower\n"
+                                               "sponza\\-fake\\-background\\-for\\-upper\\-windows\n"
+                                               "sponza\\-outest\\-walls\n"
+                                               "sponza\\-balkony\\-wall\n"
+                                               "sponza\\-balkony\\-inner\\-wall\n"
+                                               "sponza\\-balkony\\-upper\\-inner\\-wall\n"
+                                               "sponza\\-balkony\\-outer\\-wall\n"
+                                               "sponza\\-balkony\\-upper\\-outer\\-wall\n"
+                                               "sponza\\-upper\\-wall\n"
+                                               "sponza\\-strange\\-walls\\-I\\-dont\\-know\\-why\\-they\\-are\\-there"};
+  importSettings.meshesToMergeWhenVoxelizing = meshesToMergeWhenVoxelizing;
   
   importSettings.materialUuids['details'] = uuids::sponza::materials::details;
   importSettings.materialUuids['bricks'] = uuids::sponza::materials::bricks;
@@ -760,6 +784,7 @@ void registerScene(ResourceIndex@ index)
                           sourceFile: "sponza-debugging-helpers.blend",
                           groupToImport: "texture-frame",
                           settings: importSettings);
+                          
                           
   index.registerSceneLayerFile(uuid: uuids::sponza::sceneLayers::sponza_scenery,
                                file: "sponza-scenery.scene-layer");
