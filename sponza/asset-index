@@ -696,6 +696,7 @@ void registerScene(ResourceIndex@ index)
                                                "sponza\\-upper\\-wall\n"
                                                "sponza\\-strange\\-walls\\-I\\-dont\\-know\\-why\\-they\\-are\\-there"};
   importSettings.meshesToMergeWhenVoxelizing = meshesToMergeWhenVoxelizing;
+  importSettings.meshVoxelizeScaleFactors["sponza\\-arch\\-lower"] = 2;
   
   importSettings.materialUuids['details'] = uuids::sponza::materials::details;
   importSettings.materialUuids['bricks'] = uuids::sponza::materials::bricks;
