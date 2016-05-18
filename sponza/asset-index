@@ -681,25 +681,25 @@ void registerScene(ResourceIndex@ index)
   array<string> meshesToVoxelize_all = {".*"};
   importSettings.meshesToVoxelize = meshesToVoxelize_all;
   
-  array<string> meshesToMergeWhenVoxelizing = {".*roof.*\n"
-                                               ".*seperator.*\n"
-                                               ".*ceiling.*\n"
-                                               ".*floor.*\n"
-                                               ".*arch\\-balcony.*\n"
-                                               ".*ground.*\n"
-                                               ".*armrest.*\n"
-                                               "sponza\\-arch\\-lower\n"
-                                               "sponza\\-fake\\-background\\-for\\-upper\\-windows\n"
-                                               "sponza\\-outest\\-walls\n"
-                                               "sponza\\-balkony\\-wall\n"
-                                               "sponza\\-balkony\\-inner\\-wall\n"
-                                               "sponza\\-balkony\\-upper\\-inner\\-wall\n"
-                                               "sponza\\-balkony\\-outer\\-wall\n"
-                                               "sponza\\-balkony\\-upper\\-outer\\-wall\n"
-                                               "sponza\\-upper\\-wall\n"
-                                               "sponza\\-strange\\-walls\\-I\\-dont\\-know\\-why\\-they\\-are\\-there"};
-  importSettings.meshesToMergeWhenVoxelizing = meshesToMergeWhenVoxelizing;
-  importSettings.meshVoxelizeScaleFactors["sponza\\-arch\\-lower"] = 2;
+  array<string> meshesNotToVoxelize = {".*roof.*",
+                                       ".*seperator.*",
+                                       ".*ceiling.*",
+                                       ".*arch\\-balcony.*",
+                                       ".*ground.*",
+                                       ".*armrest.*",
+                                       "sponza\\-arch\\-lower",
+                                       "sponza\\-fake\\-background\\-for\\-upper\\-windows",
+                                       "sponza\\-outest\\-walls",
+                                       "sponza\\-balkony\\-wall",
+                                       "sponza\\-first\\-floor\\-wall",
+                                       "sponza\\-balkony\\-inner\\-wall",
+                                       "sponza\\-balkony\\-upper\\-inner\\-wall",
+                                       "sponza\\-balkony\\-outer\\-wall",
+                                       "sponza\\-balkony\\-upper\\-outer\\-wall",
+                                       "sponza\\-upper\\-wall",
+                                       "sponza\\-strange\\-walls\\-I\\-dont\\-know\\-why\\-they\\-are\\-there"};
+  importSettings.meshesNotToVoxelize = meshesNotToVoxelize;
+  importSettings.meshVoxelizeScaleFactors["sponza\\-floor"] = 2;
   
   importSettings.materialUuids['details'] = uuids::sponza::materials::details;
   importSettings.materialUuids['bricks'] = uuids::sponza::materials::bricks;
@@ -824,7 +824,9 @@ void registerLights(ResourceIndex@ index)
 void main(ResourceIndex@ index)
 {
   registerTextures(index);
+  forceReimport=true;
   registerMaterials(index);
   registerScene(index);
   registerLights(index);
+  forceReimport=false;
 }
