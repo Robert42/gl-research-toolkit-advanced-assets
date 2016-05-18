@@ -674,6 +674,9 @@ void registerScene(ResourceIndex@ index)
                                   "sponza\\-upper\\-wall$"};
   importSettings.meshesToVoxelizeTwoSided = twoSidedMeshes;
   
+  array<string> meshesToVoxelizeWithManifold = {"sponza_vase_round"};
+  importSettings.meshesToVoxelizeWithManifold = meshesToVoxelizeWithManifold;
+  
   array<string> meshesToVoxelize_empty = {};
   array<string> meshesToVoxelize_all = {".*"};
   importSettings.meshesToVoxelize = meshesToVoxelize_all;
