@@ -701,6 +701,8 @@ void registerScene(ResourceIndex@ index)
   importSettings.meshesNotToVoxelize = meshesNotToVoxelize;
   importSettings.meshVoxelizeScaleFactors["sponza\\-floor"] = 2;
   
+  //importSettings.voxelizationMeshDummies["sponza\\-floor"] = uuids::sponza::meshes::voxelisationDummies::sponzaBuilding;
+  
   importSettings.materialUuids['details'] = uuids::sponza::materials::details;
   importSettings.materialUuids['bricks'] = uuids::sponza::materials::bricks;
   importSettings.materialUuids['column_a'] = uuids::sponza::materials::column_a;
@@ -824,9 +826,9 @@ void registerLights(ResourceIndex@ index)
 void main(ResourceIndex@ index)
 {
   registerTextures(index);
-  forceReimport=true;
+  //forceReimport=true;
   registerMaterials(index);
   registerScene(index);
   registerLights(index);
-  forceReimport=false;
+  //forceReimport=false;
 }
