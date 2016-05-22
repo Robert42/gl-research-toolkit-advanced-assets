@@ -1,6 +1,9 @@
 #include "uuids.as"
 #include "common/textures/uuids.as"
 
+Uuid<StaticMesh> voxelProxy_sponza_building("{47080d78-64e7-4a00-a82e-718840e6f78f}");
+Uuid<StaticMesh> voxelProxy_sponza_window("{e1d326c8-9ca9-48a0-8fe0-2429ed180058}");
+
 void registerTextures(ResourceIndex@ index)
 {
   TextureSampler samplerInterpolated;
@@ -666,6 +669,15 @@ void registerMaterials(ResourceIndex@ index)
                          material: debuggingText);
 }
 
+void registerVoxelProxies(ResourceIndex@ index)
+{
+  index.convertStaticMesh(meshFile: "sponza_voxelization_proxy_building_merged.mesh", sourceFile: "sponza_voxelization_proxies.blend", groupToImport: "sponza_voxelization_dummy_building_merged_with_modifier");
+  index.registerStaticMesh(voxelProxy_sponza_building, file: "sponza_voxelization_proxy_building_merged.mesh");
+  
+  index.convertStaticMesh(meshFile: "sponza_voxelization_proxy_window.mesh", sourceFile: "sponza_voxelization_proxies.blend", groupToImport: "sponza_voxelization_proxy_window");
+  index.registerStaticMesh(voxelProxy_sponza_window, file: "sponza_voxelization_proxy_window.mesh");
+}
+
 void registerScene(ResourceIndex@ index)
 {
   SceneGraphImportSettings importSettings;
@@ -701,7 +713,8 @@ void registerScene(ResourceIndex@ index)
   importSettings.meshesNotToVoxelize = meshesNotToVoxelize;
   importSettings.meshVoxelizeScaleFactors["sponza\\-floor"] = 2;
   
-  //importSettings.voxelizationMeshDummies["sponza\\-floor"] = uuids::sponza::meshes::voxelisationDummies::sponzaBuilding;
+  importSettings.meshVoxelizeProxies["sponza-floor"] = voxelProxy_sponza_building;
+  importSettings.meshVoxelizeProxies["sponza-small-window-000"] = voxelProxy_sponza_window;
   
   importSettings.materialUuids['details'] = uuids::sponza::materials::details;
   importSettings.materialUuids['bricks'] = uuids::sponza::materials::bricks;
@@ -826,8 +839,9 @@ void registerLights(ResourceIndex@ index)
 void main(ResourceIndex@ index)
 {
   registerTextures(index);
-  //forceReimport=true;
   registerMaterials(index);
+  //forceReimport=true;
+  registerVoxelProxies(index);
   registerScene(index);
   registerLights(index);
   //forceReimport=false;
