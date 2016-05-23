@@ -671,7 +671,7 @@ void registerMaterials(ResourceIndex@ index)
 
 void registerVoxelProxies(ResourceIndex@ index)
 {
-  index.convertStaticMesh(meshFile: "sponza_voxelization_proxy_building_merged.mesh", sourceFile: "sponza_voxelization_proxies.blend", groupToImport: "sponza_voxelization_dummy_building_merged_with_modifier");
+  index.convertStaticMesh(meshFile: "sponza_voxelization_proxy_building_merged.mesh", sourceFile: "sponza_voxelization_proxies.blend", groupToImport: "sponza_voxelization_dummy_building_merged");
   index.registerStaticMesh(voxelProxy_sponza_building, file: "sponza_voxelization_proxy_building_merged.mesh");
   
   index.convertStaticMesh(meshFile: "sponza_voxelization_proxy_window.mesh", sourceFile: "sponza_voxelization_proxies.blend", groupToImport: "sponza_voxelization_proxy_window");
