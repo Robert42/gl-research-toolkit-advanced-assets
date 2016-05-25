@@ -1,0 +1,16 @@
+#include "uuids.as"
+
+void main(Scene@ scene)
+{
+//  scene.loadSceneLayer(uuids::sponza::sceneLayers::sponza_material_debugging);
+
+  scene.loadSceneLayer(uuids::sponza::sceneLayers::sponza_scenery);
+  scene.loadSceneLayer(uuids::sponza::sceneLayers::sponza_building);
+//  scene.loadSceneLayer(uuids::sponza::sceneLayers::sponza_decoration);
+//  scene.loadSceneLayer(uuids::sponza::sceneLayers::sponza_fabrics);
+//  scene.loadSceneLayer(uuids::sponza::sceneLayers::sponza_foliage);
+//  scene.loadSceneLayer(uuids::sponza::sceneLayers::sponza_unmovable_decoration);
+  scene.addSceneLayer_debugCamera();
+  
+  scene.camera[CameraSlot::MAIN_CAMERA] = uuids::sponza::cameras::eyeHeight;
+}

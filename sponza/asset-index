@@ -824,6 +824,8 @@ void registerScene(ResourceIndex@ index)
                           file: "sponza-full.scene");
   index.registerSceneFile(uuid: uuids::sponza::scenes::sponza_no_foliage,
                           file: "sponza-no-foliage.scene");
+  index.registerSceneFile(uuid: uuids::sponza::scenes::sponza_building_only,
+                          file: "sponza-only-building.scene");
 }
 
 void registerLights(ResourceIndex@ index)
