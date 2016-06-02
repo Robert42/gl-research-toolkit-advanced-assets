@@ -155,5 +155,11 @@ Uuid<Texture> curtain_srmo = Uuid<Texture>("{98da94a7-85c3-4b17-97c6-c46bda5e008
 
 } // namespace textures
 
+void registerUuidsToScene(Scene@ scene)
+{
+  scene.camera[CameraSlot::MAIN_CAMERA] = uuids::sponza::cameras::eyeHeight;
+  scene.light[LightSlot::MAIN_SUN] = uuids::sponza::lights::sunLight;
+}
+
 } // namespace sponza
 } // namespace uuids

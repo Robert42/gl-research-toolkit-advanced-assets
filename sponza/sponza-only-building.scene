@@ -12,5 +12,5 @@ void main(Scene@ scene)
 //  scene.loadSceneLayer(uuids::sponza::sceneLayers::sponza_unmovable_decoration);
   scene.addSceneLayer_debugCamera();
   
-  scene.camera[CameraSlot::MAIN_CAMERA] = uuids::sponza::cameras::eyeHeight;
+  uuids::sponza::registerUuidsToScene(scene);
 }
