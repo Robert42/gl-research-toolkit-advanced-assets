@@ -1,5 +1,6 @@
 void main(ResourceIndex@ index)
 {
+  index.loadSubdirectory("textures");
   index.loadSubdirectory("meshes");
   index.loadSubdirectory("sponza");
 }
