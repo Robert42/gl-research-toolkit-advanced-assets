@@ -17,6 +17,10 @@ void registerTextures(ResourceIndex@ index)
   import_diff_with_mask.type = TextureType::INT8;
   import_diff_with_mask.alpha_channel_suffix = "_mask.png";
   import_diff_with_mask.merge_alpha_as_grey = true;
+
+  TextureImportSettings import_environment_map;
+  import_environment_map.format = TextureFormat::RGB;
+  import_environment_map.type = TextureType::FLOAT16;
   
   TextureImportSettings import_bump;
   import_bump.format = TextureFormat::R;
@@ -425,6 +429,8 @@ void registerTextures(ResourceIndex@ index)
   index.registerTextureFile(uuid: uuids::sponza::textures::lion_shield_srmo,
       file: "lion_shield_srmo.texture",
       defaultSampler: samplerInterpolated);
+      
+  index.convertTexture(textureFile: "env.texture", sourceFile: "textures/env/env_linear.exr", settings: import_environment_map); 
 }
 
 void registerMaterials(ResourceIndex@ index)
