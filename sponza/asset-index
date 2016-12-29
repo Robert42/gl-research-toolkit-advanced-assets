@@ -430,7 +430,10 @@ void registerTextures(ResourceIndex@ index)
       file: "lion_shield_srmo.texture",
       defaultSampler: samplerInterpolated);
       
-  index.convertTexture(textureFile: "env.texture", sourceFile: "textures/env/env_linear.exr", settings: import_environment_map); 
+  index.convertTexture(textureFile: "env.texture", sourceFile: "textures/env/env_linear.exr", settings: import_environment_map);
+  index.registerTextureFile(uuid: uuids::sponza::textures::env,
+      file: "env.texture",
+      defaultSampler: samplerInterpolated);
 }
 
 void registerMaterials(ResourceIndex@ index)
@@ -667,7 +670,8 @@ void registerMaterials(ResourceIndex@ index)
   TexturedMaterial material_test;
   material_test.masked = true;
   material_test.two_sided = true;
-  material_test.basecolor_map = TextureHandle(uuids::textures::transparency_text);
+  //material_test.basecolor_map = TextureHandle(uuids::textures::transparency_text);
+  material_test.basecolor_map = TextureHandle(uuids::sponza::textures::env);
   index.registerMaterial(uuid: uuids::sponza::materials::material_test,
                          material: material_test);
   

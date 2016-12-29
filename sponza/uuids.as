@@ -153,6 +153,8 @@ Uuid<Texture> curtain_green_color = Uuid<Texture>("{228566ef-dfd5-4549-bfab-cd45
 Uuid<Texture> curtain_blue_color = Uuid<Texture>("{818b0ad5-f163-4c0e-9c99-f8f25137f9ee}");
 Uuid<Texture> curtain_srmo = Uuid<Texture>("{98da94a7-85c3-4b17-97c6-c46bda5e008a}");
 
+Uuid<Texture> env = Uuid<Texture>("{3ba52beb-5a49-4c76-af91-124878d38888}");
+
 } // namespace textures
 
 void registerUuidsToScene(Scene@ scene)
