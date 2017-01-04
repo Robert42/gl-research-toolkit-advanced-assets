@@ -153,7 +153,11 @@ Uuid<Texture> curtain_green_color = Uuid<Texture>("{228566ef-dfd5-4549-bfab-cd45
 Uuid<Texture> curtain_blue_color = Uuid<Texture>("{818b0ad5-f163-4c0e-9c99-f8f25137f9ee}");
 Uuid<Texture> curtain_srmo = Uuid<Texture>("{98da94a7-85c3-4b17-97c6-c46bda5e008a}");
 
-Uuid<Texture> env = Uuid<Texture>("{3ba52beb-5a49-4c76-af91-124878d38888}");
+Uuid<Texture> env         = Uuid<Texture>("{3ba52beb-5a49-4c76-af91-124878d38888}");
+Uuid<Texture> ibl_ggx     = Uuid<Texture>("{00000000-0000-0000-0000-000000000000}"); // TODO!!!
+Uuid<Texture> ibl_diffuse = Uuid<Texture>("{00000000-0000-0000-0000-000000000000}"); // TODO!!!
+Uuid<Texture> ibl_cone_60 = Uuid<Texture>("{00000000-0000-0000-0000-000000000000}"); // TODO!!!
+Uuid<Texture> ibl_cone_45 = Uuid<Texture>("{00000000-0000-0000-0000-000000000000}"); // TODO!!!
 
 } // namespace textures
 
@@ -161,6 +165,12 @@ void registerUuidsToScene(Scene@ scene)
 {
   scene.camera[CameraSlot::MAIN_CAMERA] = uuids::sponza::cameras::eyeHeight;
   scene.light[LightSlot::MAIN_SUN] = uuids::sponza::lights::sunLight;
+  
+  scene.set_sky(uuids::sponza::textures::env,
+                uuids::sponza::textures::ibl_ggx,
+                uuids::sponza::textures::ibl_diffuse,
+                uuids::sponza::textures::ibl_cone_60,
+                uuids::sponza::textures::ibl_cone_45);
 }
 
 } // namespace sponza
