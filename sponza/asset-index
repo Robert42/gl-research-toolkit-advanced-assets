@@ -22,6 +22,18 @@ void registerTextures(ResourceIndex@ index)
   import_environment_map.format = TextureFormat::RGB;
   import_environment_map.type = TextureType::FLOAT16;
   
+  TextureImportSettings import_ibl_ggx = import_environment_map;
+  import_ibl_ggx.calculate_ibl_ggx_cubemap = true;
+  
+  TextureImportSettings import_ibl_diffuse = import_environment_map;
+  import_ibl_diffuse.calculate_ibl_diffuse_cubemap = true;
+  
+  TextureImportSettings import_ibl_cone_60 = import_environment_map;
+  import_ibl_cone_60.calculate_ibl_cone_60 = true;
+  
+  TextureImportSettings import_ibl_cone_45 = import_environment_map;
+  import_ibl_cone_45.calculate_ibl_cone_45 = true;
+  
   TextureImportSettings import_bump;
   import_bump.format = TextureFormat::R;
   import_bump.type = TextureType::INT8;
@@ -434,6 +446,27 @@ void registerTextures(ResourceIndex@ index)
   index.registerTextureFile(uuid: uuids::sponza::textures::env,
       file: "env.texture",
       defaultSampler: samplerInterpolated);
+      
+  index.convertTexture(textureFile: "ibl_ggx.texture", sourceFile: "textures/env/env_linear.exr", settings: import_ibl_ggx);
+  index.registerTextureFile(uuid: uuids::sponza::textures::ibl_ggx,
+    file: "ibl_ggx.texture",
+    defaultSampler: samplerInterpolated);
+  /******************************************************* TODO
+  index.convertTexture(textureFile: "ibl_diffuse.texture", sourceFile: "textures/env/env_linear.exr", settings: import_ibl_diffuse);
+  index.registerTextureFile(uuid: uuids::sponza::textures::ibl_diffuse,
+    file: "ibl_diffuse.texture",
+    defaultSampler: samplerInterpolated);
+    
+  index.convertTexture(textureFile: "ibl_cone_60.texture", sourceFile: "textures/env/env_linear.exr", settings: import_ibl_cone_60);
+  index.registerTextureFile(uuid: uuids::sponza::textures::ibl_cone_60,
+    file: "ibl_cone_60.texture",
+    defaultSampler: samplerInterpolated);
+    
+  index.convertTexture(textureFile: "ibl_cone_45.texture", sourceFile: "textures/env/env_linear.exr", settings: import_ibl_cone_45);
+  index.registerTextureFile(uuid: uuids::sponza::textures::ibl_cone_45,
+    file: "ibl_cone_45.texture",
+    defaultSampler: samplerInterpolated);
+  **************************************************************/
 }
 
 void registerMaterials(ResourceIndex@ index)

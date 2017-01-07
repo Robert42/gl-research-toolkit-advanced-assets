@@ -154,10 +154,10 @@ Uuid<Texture> curtain_blue_color = Uuid<Texture>("{818b0ad5-f163-4c0e-9c99-f8f25
 Uuid<Texture> curtain_srmo = Uuid<Texture>("{98da94a7-85c3-4b17-97c6-c46bda5e008a}");
 
 Uuid<Texture> env         = Uuid<Texture>("{3ba52beb-5a49-4c76-af91-124878d38888}");
-Uuid<Texture> ibl_ggx     = Uuid<Texture>("{00000000-0000-0000-0000-000000000000}"); // TODO!!!
-Uuid<Texture> ibl_diffuse = Uuid<Texture>("{00000000-0000-0000-0000-000000000000}"); // TODO!!!
-Uuid<Texture> ibl_cone_60 = Uuid<Texture>("{00000000-0000-0000-0000-000000000000}"); // TODO!!!
-Uuid<Texture> ibl_cone_45 = Uuid<Texture>("{00000000-0000-0000-0000-000000000000}"); // TODO!!!
+Uuid<Texture> ibl_ggx     = Uuid<Texture>("{cb8c7b29-cbc5-4759-95ea-f38da626718e}");
+Uuid<Texture> ibl_diffuse = Uuid<Texture>("{36b9aa78-cfb3-4784-b44c-cb8edb847527}");
+Uuid<Texture> ibl_cone_60 = Uuid<Texture>("{69673cd8-523e-4558-a545-a06f614d86c0}");
+Uuid<Texture> ibl_cone_45 = Uuid<Texture>("{04d945ab-0c0e-464c-851e-66513b37487d}");
 
 } // namespace textures
 
