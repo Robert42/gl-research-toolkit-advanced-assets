@@ -15,7 +15,7 @@ void registerTextures(ResourceIndex@ index)
   
   TextureSampler iblSampler = cubemapSamplerInterpolated;
   iblSampler.minLod = 0;
-  iblSampler.maxLod = 5;
+  iblSampler.maxLod = 5; // hide seams between cubemap sides
   
   TextureImportSettings import_diff;
   import_diff.format = TextureFormat::RGB;
