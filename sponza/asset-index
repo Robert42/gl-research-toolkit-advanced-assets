@@ -460,12 +460,12 @@ void registerTextures(ResourceIndex@ index)
   index.registerTextureFile(uuid: uuids::sponza::textures::ibl_ggx,
     file: "ibl_ggx.texture",
     defaultSampler: iblSampler);
-  /******************************************************* TODO
   index.convertTexture(textureFile: "ibl_diffuse.texture", sourceFile: "textures/env/env_linear.exr", settings: import_ibl_diffuse);
   index.registerTextureFile(uuid: uuids::sponza::textures::ibl_diffuse,
     file: "ibl_diffuse.texture",
     defaultSampler: iblSampler);
     
+    /******************************************************* TODO
   index.convertTexture(textureFile: "ibl_cone_60.texture", sourceFile: "textures/env/env_linear.exr", settings: import_ibl_cone_60);
   index.registerTextureFile(uuid: uuids::sponza::textures::ibl_cone_60,
     file: "ibl_cone_60.texture",
