@@ -883,6 +883,8 @@ void registerLights(ResourceIndex@ index)
   SphereAreaLightSource sphereAreaLight;
   sphereAreaLight.radius = 3.0;
   sphereAreaLight.luminous_power *= 10000000;
+  sphereAreaLight.luminous_power *= 4;
+  sphereAreaLight.color = vec3(1.143942, 0.9713688, 0.8624419);
   
   index.registerLightSource(uuid: uuids::sponza::lights::sunLight,
                             light: sphereAreaLight);
