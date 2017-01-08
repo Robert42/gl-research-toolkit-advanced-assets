@@ -1,3 +1,5 @@
+#include "../textures/uuids.as"
+
 namespace uuids {
 namespace sponza {
 
@@ -166,7 +168,8 @@ void registerUuidsToScene(Scene@ scene)
   scene.camera[CameraSlot::MAIN_CAMERA] = uuids::sponza::cameras::eyeHeight;
   scene.light[LightSlot::MAIN_SUN] = uuids::sponza::lights::sunLight;
   
-  scene.set_sky(uuids::sponza::textures::env,
+  scene.set_sky(//uuids::sponza::textures::env,
+                uuids::textures::summer_clouds,
                 uuids::sponza::textures::ibl_ggx,
                 uuids::sponza::textures::ibl_diffuse,
                 uuids::sponza::textures::ibl_cone_60,

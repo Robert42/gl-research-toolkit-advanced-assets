@@ -1,3 +1,15 @@
+#include "uuids.as"
+
 void main(ResourceIndex@ index)
 {
+  TextureImportSettings import_environment_map;
+  import_environment_map.format = TextureFormat::RGB;
+  import_environment_map.type = TextureType::FLOAT16;
+  
+  TextureSampler samplerInterpolated;
+  
+  index.convertTexture(textureFile: "summer_clouds.texture", sourceFile: "summer-clouds.exr", settings: import_environment_map);
+  index.registerTextureFile(uuid: uuids::textures::summer_clouds,
+  file: "summer_clouds.texture",
+  defaultSampler: samplerInterpolated);
 }
