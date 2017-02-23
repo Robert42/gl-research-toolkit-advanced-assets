@@ -1,4 +1,5 @@
 void main(SceneLayer@ sceneLayer)
 {
   sceneLayer.loadSceneGraph("sponza-scenery.scene-graph");
+  sceneLayer.loadSceneGraph("extra-cameras.scene-graph");
 }

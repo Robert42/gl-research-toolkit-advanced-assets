@@ -853,6 +853,10 @@ void registerScene(ResourceIndex@ index)
                           sourceFile: "sponza-debugging-helpers.blend",
                           groupToImport: "texture-frame",
                           settings: importSettings);
+  index.convertSceneGraph(sceneGraphFile: "extra-cameras.scene-graph",
+                          sourceFile: "sponza_camera_positions.blend",
+                          groupToImport: "extra_cameras",
+                          settings: importSettings);
                           
                           
   index.registerSceneLayerFile(uuid: uuids::sponza::sceneLayers::sponza_scenery,
